@@ -15,5 +15,6 @@ public class Test1 {
     public static void main(String[] args){
         System.out.print("Hello world");
         System.out.println("Foo, Hello foo");//Added by Fridgeridge
+        System.out.println("Wirj, you fools!"); //Added by Romenor
     }
 }
