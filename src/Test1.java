@@ -1,3 +1,6 @@
+
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,5 +14,6 @@
 public class Test1 {
     public static void main(String[] args){
         System.out.print("Hello world");
+        System.out.println("Foo, Hello foo");//Added by Fridgeridge
     }
 }
