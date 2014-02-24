@@ -4,6 +4,9 @@
 *.jar
 *.war
 *.ear
+<<<<<<< HEAD
 /JavaApplication1/nbproject/private/
 /JavaApplication2/nbproject/private/
+=======
+>>>>>>> e0dd7fa13e05700bbe0c23bc74ebac473b57ff8c
 /nbproject/private/
