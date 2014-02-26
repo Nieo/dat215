@@ -34,7 +34,6 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jPanel1.setBackground(new java.awt.Color(2, 238, 238));
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 40));
