@@ -44,7 +44,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="homePanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="settingsPanel" pref="967" max="32767" attributes="0"/>
+                  <Component id="settingsPanel" pref="969" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
               </Group>
