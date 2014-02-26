@@ -1,6 +1,4 @@
 
-import se.chalmers.ait.dat215.project.ProductCategory;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,9 +16,6 @@ public class MainContainerJFrame extends javax.swing.JFrame {
      */
     public MainContainerJFrame() {
         initComponents();
-        ProductCategory[] list = {ProductCategory.BERRY,ProductCategory.HERB};
-        categoryViewPanel1.setComponents(list, "Drycker");
-        repaint();
     }
 
     /**
@@ -47,6 +42,8 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         categoryViewPanel1 = new categoryViewPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1280, 720));
+        setMinimumSize(new java.awt.Dimension(1280, 720));
         setPreferredSize(new java.awt.Dimension(1280, 720));
 
         topPanel.setBackground(new java.awt.Color(2, 238, 238));
@@ -159,7 +156,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addGroup(categoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(categoryPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -175,7 +172,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addGap(0, 198, Short.MAX_VALUE))
+                .addGap(0, 669, Short.MAX_VALUE))
         );
 
         getContentPane().add(categoryPanel, java.awt.BorderLayout.LINE_START);
@@ -191,7 +188,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         );
         registerPanelLayout.setVerticalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
+            .addGap(0, 801, Short.MAX_VALUE)
         );
 
         getContentPane().add(registerPanel, java.awt.BorderLayout.LINE_END);
@@ -267,3 +264,4 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
 }
+
