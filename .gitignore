@@ -4,12 +4,15 @@
 *.jar
 *.war
 *.ear
-<<<<<<< HEAD
+/dist/
 /JavaApplication1/nbproject/private/
 /JavaApplication2/nbproject/private/
-=======
->>>>>>> e0dd7fa13e05700bbe0c23bc74ebac473b57ff8c
+
+
 /nbproject/private/
+<<<<<<< HEAD
+/build/
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 /build/
@@ -20,3 +23,4 @@
 =======
 /build/
 >>>>>>> fc583f651185cb94efb1ac5ec1887979a75e844a
+>>>>>>> c5eb80f821b1d8caa8db3fe4c1aad6f66eb3099f
