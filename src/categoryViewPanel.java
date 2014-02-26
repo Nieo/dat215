@@ -9,7 +9,10 @@
  *
  * @author Erik
  */
-import java.util.ArrayList;
+import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.util.*;
 import se.chalmers.ait.dat215.project.*;
 public class categoryViewPanel extends javax.swing.JPanel {
     IMatDataHandler dh = IMatDataHandler.getInstance();
@@ -19,17 +22,25 @@ public class categoryViewPanel extends javax.swing.JPanel {
     public categoryViewPanel() {
         initComponents();
     }
-    public categoryViewPanel(ProductCategory[] categorys){
-        //TODO list all items from categorys
+    public categoryViewPanel(ProductCategory[] categorys, String name){
+        initComponents();
+        setComponents(categorys, name);
+        
+    }
+    public void setComponents(ProductCategory[] categorys, String name){
+        categoryNameLabel.setText(name);
         ArrayList<Product> products = new ArrayList<Product>();
         for(ProductCategory s: categorys){
-            dh.getProducts(s);
+            products.addAll(dh.getProducts(s));
         }
+        System.out.println(products.size());
         boolean background = false;
         for(Product p: products){
-            add(new itemPanel(p,background));
+            itemContainerPanel.add(new itemPanel(p,background));
             background = !background;
+            System.out.println(p.getName());
         }
+        itemContainerPanel.setBackground(Color.GREEN);
     }
          
     /**
@@ -43,42 +54,37 @@ public class categoryViewPanel extends javax.swing.JPanel {
 
         categoryNameLabel = new javax.swing.JLabel();
         separator = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
         itemContainerPanel = new javax.swing.JPanel();
 
+        categoryNameLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         categoryNameLabel.setText("jLabel1");
 
-        javax.swing.GroupLayout itemContainerPanelLayout = new javax.swing.GroupLayout(itemContainerPanel);
-        itemContainerPanel.setLayout(itemContainerPanelLayout);
-        itemContainerPanelLayout.setHorizontalGroup(
-            itemContainerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 374, Short.MAX_VALUE)
-        );
-        itemContainerPanelLayout.setVerticalGroup(
-            itemContainerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
-        );
+        itemContainerPanel.setLayout(new java.awt.GridLayout(0, 1));
+        jScrollPane1.setViewportView(itemContainerPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(separator, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(itemContainerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(separator, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(categoryNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(categoryNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(categoryNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(itemContainerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 40, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -86,6 +92,7 @@ public class categoryViewPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel categoryNameLabel;
     private javax.swing.JPanel itemContainerPanel;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator separator;
     // End of variables declaration//GEN-END:variables
 }

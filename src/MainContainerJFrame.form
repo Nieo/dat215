@@ -47,7 +47,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="homePanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="settingsPanel" pref="967" max="32767" attributes="0"/>
+                  <Component id="settingsPanel" pref="969" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -269,7 +269,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Component class="checkOutPanel" name="checkOutPanel1">
+        <Component class="categoryViewPanel" name="categoryViewPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="card2"/>

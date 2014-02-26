@@ -1,3 +1,6 @@
+
+import se.chalmers.ait.dat215.project.ProductCategory;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +18,9 @@ public class MainContainerJFrame extends javax.swing.JFrame {
      */
     public MainContainerJFrame() {
         initComponents();
+        ProductCategory[] list = {ProductCategory.BERRY,ProductCategory.HERB};
+        categoryViewPanel1.setComponents(list, "Drycker");
+        repaint();
     }
 
     /**
@@ -38,7 +44,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         registerPanel = new javax.swing.JPanel();
         mainCenterPanel = new javax.swing.JPanel();
-        checkOutPanel1 = new checkOutPanel();
+        categoryViewPanel1 = new categoryViewPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -95,7 +101,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             .addGroup(topPanelLayout.createSequentialGroup()
                 .addComponent(homePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(settingsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 967, Short.MAX_VALUE)
+                .addComponent(settingsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -153,7 +159,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addGroup(categoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(categoryPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -191,7 +197,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         getContentPane().add(registerPanel, java.awt.BorderLayout.LINE_END);
 
         mainCenterPanel.setLayout(new java.awt.CardLayout());
-        mainCenterPanel.add(checkOutPanel1, "card2");
+        mainCenterPanel.add(categoryViewPanel1, "card2");
 
         getContentPane().add(mainCenterPanel, java.awt.BorderLayout.CENTER);
 
@@ -248,7 +254,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton campaignbutton;
     private javax.swing.JPanel categoryPanel;
-    private checkOutPanel checkOutPanel1;
+    private categoryViewPanel categoryViewPanel1;
     private javax.swing.JButton favoriteButton;
     private javax.swing.JPanel homePanel;
     private javax.swing.JButton jButton1;
