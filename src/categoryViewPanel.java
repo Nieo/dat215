@@ -9,9 +9,7 @@
  *
  * @author Erik
  */
-import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.awt.Color;
-import java.awt.GridLayout;
 import java.util.*;
 import se.chalmers.ait.dat215.project.*;
 public class categoryViewPanel extends javax.swing.JPanel {
