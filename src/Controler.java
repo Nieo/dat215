@@ -3,8 +3,7 @@ import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.ProductCategory;
+import se.chalmers.ait.dat215.project.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,6 +20,7 @@ public class Controler implements ActionListener{
     IMatDataHandler dh = IMatDataHandler.getInstance();
     JPanel mainPanel = mainFrame.getMainPanel();
     categoryViewPanel cvp = mainFrame.getCategoryViewPanel();
+   
     public Controler(){
         mainFrame.setVisible(true);
         mainFrame.addContorler(this);
@@ -35,11 +35,12 @@ public class Controler implements ActionListener{
         
         System.out.println(ae.getActionCommand());
         CardLayout cl = (CardLayout)mainPanel.getLayout();
+        
         switch(ae.getActionCommand()){
             case("Bröd"):
                 System.out.println("Brödknapp");
                 cl.show(mainPanel,"categoryViewPanel");
-                cvp.setCategory(dh.getProducts(ProductCategory.BREAD), "Bröd");
+                cvp.setCategory(dh.getProducts(ProductCategory.BREAD), "Bröd",this);
                 break;
             case("Kampanj"):
                 System.out.println("Kampanjknapp");
@@ -50,4 +51,5 @@ public class Controler implements ActionListener{
         
        
     }
+    
 }

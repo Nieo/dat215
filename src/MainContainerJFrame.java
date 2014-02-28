@@ -33,6 +33,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         jButton2.addActionListener(al);
         favoriteButton.addActionListener(al);
         campaignbutton.addActionListener(al);
+        pod.addActionListener(al);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,9 +54,11 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jButton2 = new javax.swing.JButton();
+        pod = new javax.swing.JButton();
         registerPanel = new javax.swing.JPanel();
         mainCenterPanel = new javax.swing.JPanel();
         categoryViewPanel1 = new categoryViewPanel();
+        checkOutPanel1 = new checkOutPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -158,6 +161,13 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             }
         });
 
+        pod.setText("pod");
+        pod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                podActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout categoryPanelLayout = new javax.swing.GroupLayout(categoryPanel);
         categoryPanel.setLayout(categoryPanelLayout);
         categoryPanelLayout.setHorizontalGroup(
@@ -167,13 +177,14 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                     .addComponent(favoriteButton)
                     .addComponent(campaignbutton)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addGap(0, 2, Short.MAX_VALUE))
             .addGroup(categoryPanelLayout.createSequentialGroup()
                 .addGroup(categoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(categoryPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         categoryPanelLayout.setVerticalGroup(
@@ -188,7 +199,9 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addGap(0, 669, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pod)
+                .addGap(0, 640, Short.MAX_VALUE))
         );
 
         getContentPane().add(categoryPanel, java.awt.BorderLayout.LINE_START);
@@ -210,7 +223,8 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         getContentPane().add(registerPanel, java.awt.BorderLayout.LINE_END);
 
         mainCenterPanel.setLayout(new java.awt.CardLayout());
-        mainCenterPanel.add(categoryViewPanel1, "card2");
+        mainCenterPanel.add(categoryViewPanel1, "categoryViewPanel");
+        mainCenterPanel.add(checkOutPanel1, "checkoutPanel");
 
         getContentPane().add(mainCenterPanel, java.awt.BorderLayout.CENTER);
 
@@ -229,18 +243,24 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void podActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_podActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_podActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton campaignbutton;
     private javax.swing.JPanel categoryPanel;
     private categoryViewPanel categoryViewPanel1;
+    private checkOutPanel checkOutPanel1;
     private javax.swing.JButton favoriteButton;
     private javax.swing.JPanel homePanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel mainCenterPanel;
+    private javax.swing.JButton pod;
     private javax.swing.JPanel registerPanel;
     private javax.swing.JPanel searchPanel;
     private javax.swing.JPanel settingsPanel;

@@ -10,10 +10,11 @@
  * @author Erik
  */
 import java.awt.Color;
+import java.awt.event.ActionListener;
 import java.util.*;
 import se.chalmers.ait.dat215.project.*;
 public class categoryViewPanel extends javax.swing.JPanel {
-    IMatDataHandler dh = IMatDataHandler.getInstance();
+   
     /**
      * Creates new form categoryViewPanel
      */
@@ -21,12 +22,12 @@ public class categoryViewPanel extends javax.swing.JPanel {
         initComponents();
     }
    
-    public void setCategory(List<Product> products, String name){
+    public void setCategory(List<Product> products, String name, ActionListener al){
         categoryNameLabel.setText(name);
         
         boolean background = false;
         for(Product p: products){
-            itemContainerPanel.add(new itemPanel(p,background));
+            itemContainerPanel.add(new itemPanel(p,background,al));
             background = !background;
             System.out.println(p.getName());
         }
