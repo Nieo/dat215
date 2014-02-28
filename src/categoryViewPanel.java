@@ -20,18 +20,10 @@ public class categoryViewPanel extends javax.swing.JPanel {
     public categoryViewPanel() {
         initComponents();
     }
-    public categoryViewPanel(ProductCategory[] categorys, String name){
-        initComponents();
-        setComponents(categorys, name);
-        
-    }
-    public void setComponents(ProductCategory[] categorys, String name){
+   
+    public void setCategory(List<Product> products, String name){
         categoryNameLabel.setText(name);
-        ArrayList<Product> products = new ArrayList<Product>();
-        for(ProductCategory s: categorys){
-            products.addAll(dh.getProducts(s));
-        }
-        System.out.println(products.size());
+        
         boolean background = false;
         for(Product p: products){
             itemContainerPanel.add(new itemPanel(p,background));
