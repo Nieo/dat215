@@ -12,6 +12,7 @@
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.util.*;
+import javax.swing.JPanel;
 import se.chalmers.ait.dat215.project.*;
 public class categoryViewPanel extends javax.swing.JPanel {
    
@@ -24,13 +25,14 @@ public class categoryViewPanel extends javax.swing.JPanel {
    
     public void setCategory(List<Product> products, String name, ActionListener al){
         categoryNameLabel.setText(name);
-        
+        itemContainerPanel.removeAll();
         boolean background = false;
         for(Product p: products){
             itemContainerPanel.add(new itemPanel(p,background,al));
             background = !background;
-            System.out.println(p.getName());
+            //System.out.println(p.getName());
         }
+        repaint();
         itemContainerPanel.setBackground(Color.GREEN);
     }
          

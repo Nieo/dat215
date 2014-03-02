@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import se.chalmers.ait.dat215.project.*;
 
 
 
@@ -21,26 +22,26 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainContainerJFrame
      */
-    public MainContainerJFrame() {
+    public MainContainerJFrame(ActionListener al) {
         initComponents();
         searchTextField.setSelectionStart(0);
         searchTextField.setSelectionEnd(0);
+        addContorler(al);
     }
     public JPanel getMainPanel(){
         return mainCenterPanel;
     }
-    public categoryViewPanel getCategoryViewPanel(){
-        return categoryViewPanel1;
-    }
+  
     public void addContorler(ActionListener al){
         jButton1.addActionListener(al);
-        jButton2.addActionListener(al);
+        bread.addActionListener(al);
         favoriteButton.addActionListener(al);
         campaignbutton.addActionListener(al);
-        pod.addActionListener(al);
+        dairy.addActionListener(al);
     }
     public void search(String value) {
         IMatDataHandler dh = IMatDataHandler.getInstance();
+        System.out.println("Söker");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,17 +62,13 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         campaignbutton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        pod = new javax.swing.JButton();
+        bread = new javax.swing.JButton();
+        dairy = new javax.swing.JButton();
         registerPanel = new javax.swing.JPanel();
         mainCenterPanel = new javax.swing.JPanel();
-        categoryViewPanel1 = new categoryViewPanel();
-        checkOutPanel1 = new checkOutPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         topPanel.setBackground(new java.awt.Color(2, 238, 238));
         topPanel.setPreferredSize(new java.awt.Dimension(1280, 40));
@@ -134,7 +131,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(settingsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(searchTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addComponent(searchTextField)
                 .addContainerGap())
         );
 
@@ -182,17 +179,17 @@ public class MainContainerJFrame extends javax.swing.JFrame {
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(100, 10));
 
-        jButton2.setText("Bröd");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bread.setText("Bröd");
+        bread.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                breadActionPerformed(evt);
             }
         });
 
-        pod.setText("pod");
-        pod.addActionListener(new java.awt.event.ActionListener() {
+        dairy.setText("Mejeri");
+        dairy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                podActionPerformed(evt);
+                dairyActionPerformed(evt);
             }
         });
 
@@ -211,8 +208,8 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                     .addGroup(categoryPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bread, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dairy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         categoryPanelLayout.setVerticalGroup(
@@ -226,9 +223,9 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(bread)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pod)
+                .addComponent(dairy)
                 .addGap(0, 640, Short.MAX_VALUE))
         );
 
@@ -251,9 +248,6 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         getContentPane().add(registerPanel, java.awt.BorderLayout.LINE_END);
 
         mainCenterPanel.setLayout(new java.awt.CardLayout());
-        mainCenterPanel.add(categoryViewPanel1, "categoryViewPanel");
-        mainCenterPanel.add(checkOutPanel1, "checkoutPanel");
-
         getContentPane().add(mainCenterPanel, java.awt.BorderLayout.CENTER);
 
         pack();
@@ -267,13 +261,13 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campaignbuttonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void breadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_breadActionPerformed
 
-    private void podActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_podActionPerformed
+    private void dairyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dairyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_podActionPerformed
+    }//GEN-LAST:event_dairyActionPerformed
 
     private void searchTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusLost
         if(searchTextField.getText().equals("")) {
@@ -293,16 +287,14 @@ public class MainContainerJFrame extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bread;
     private javax.swing.JButton campaignbutton;
     private javax.swing.JPanel categoryPanel;
-    private categoryViewPanel categoryViewPanel1;
-    private checkOutPanel checkOutPanel1;
+    private javax.swing.JButton dairy;
     private javax.swing.JButton favoriteButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel mainCenterPanel;
-    private javax.swing.JButton pod;
     private javax.swing.JPanel registerPanel;
     private javax.swing.JPanel search;
     private javax.swing.JPanel searchPanel;

@@ -16,14 +16,16 @@ import se.chalmers.ait.dat215.project.*;
  * @author Erik
  */
 public class Controler implements ActionListener{
-    MainContainerJFrame mainFrame = new MainContainerJFrame();
+    MainContainerJFrame mainFrame = new MainContainerJFrame(this);
     IMatDataHandler dh = IMatDataHandler.getInstance();
+    ShoppingCart sc = dh.getShoppingCart();
     JPanel mainPanel = mainFrame.getMainPanel();
-    categoryViewPanel cvp = mainFrame.getCategoryViewPanel();
-   
+    categoryViewPanel categoryViewPanel = new categoryViewPanel();
+    checkOutPanel checkoutPanel = new checkOutPanel();
     public Controler(){
         mainFrame.setVisible(true);
-        mainFrame.addContorler(this);
+        mainPanel.add(categoryViewPanel,"categoryViewPanel");
+        mainPanel.add(checkoutPanel,"checkoutPanel");
         
     }
    
@@ -37,15 +39,30 @@ public class Controler implements ActionListener{
         CardLayout cl = (CardLayout)mainPanel.getLayout();
         
         switch(ae.getActionCommand()){
+            case("Mina Listor"):
+                for(ShoppingItem s: sc.getItems())
+                    System.out.println(s.getProduct().toString());
+                break;
             case("Bröd"):
                 System.out.println("Brödknapp");
                 cl.show(mainPanel,"categoryViewPanel");
-                cvp.setCategory(dh.getProducts(ProductCategory.BREAD), "Bröd",this);
+                categoryViewPanel.setCategory(dh.getProducts(ProductCategory.BREAD), "Bröd",this);
+                break;
+            case("Mejeri"):
+                System.out.println("Mejeriknapp");
+                cl.show(mainPanel, "categoryViewPanel");
+                categoryViewPanel.setCategory(dh.getProducts(ProductCategory.DAIRIES), "Mejeri", this);
                 break;
             case("Kampanj"):
                 System.out.println("Kampanjknapp");
          
                 cl.show(mainPanel,"checkoutPanel");
+                break;
+            case("Add to cart"):
+                System.out.println("Add to Cart pressed");
+                JButton j = (JButton)ae.getSource();
+                itemPanel p = (itemPanel)j.getParent();
+                sc.addProduct(p.getProduct(),p.getAmount());
                 break;
         }
         
