@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
@@ -21,6 +22,8 @@ public class MainContainerJFrame extends javax.swing.JFrame {
      */
     public MainContainerJFrame() {
         initComponents();
+        searchTextField.setSelectionStart(0);
+        searchTextField.setSelectionEnd(0);
     }
     public JPanel getMainPanel(){
         return mainCenterPanel;
@@ -35,6 +38,9 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         campaignbutton.addActionListener(al);
         pod.addActionListener(al);
     }
+    public void search(String value) {
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,9 +51,10 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         topPanel = new javax.swing.JPanel();
-        homePanel = new javax.swing.JPanel();
+        search = new javax.swing.JPanel();
         searchPanel = new javax.swing.JPanel();
         settingsPanel = new javax.swing.JPanel();
+        searchTextField = new javax.swing.JTextField();
         categoryPanel = new javax.swing.JPanel();
         favoriteButton = new javax.swing.JButton();
         campaignbutton = new javax.swing.JButton();
@@ -68,17 +75,17 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         topPanel.setBackground(new java.awt.Color(2, 238, 238));
         topPanel.setPreferredSize(new java.awt.Dimension(1280, 40));
 
-        homePanel.setBackground(new java.awt.Color(28, 28, 238));
-        homePanel.setPreferredSize(new java.awt.Dimension(100, 40));
+        search.setBackground(new java.awt.Color(28, 28, 238));
+        search.setPreferredSize(new java.awt.Dimension(100, 40));
 
-        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
-        homePanel.setLayout(homePanelLayout);
-        homePanelLayout.setHorizontalGroup(
-            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout searchLayout = new javax.swing.GroupLayout(search);
+        search.setLayout(searchLayout);
+        searchLayout.setHorizontalGroup(
+            searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        homePanelLayout.setVerticalGroup(
-            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        searchLayout.setVerticalGroup(
+            searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
@@ -96,18 +103,38 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        settingsPanel.setBackground(new java.awt.Color(8, 38, 8));
         settingsPanel.setPreferredSize(new java.awt.Dimension(385, 40));
+
+        searchTextField.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        searchTextField.setForeground(new java.awt.Color(153, 153, 153));
+        searchTextField.setText("Sök...");
+        searchTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        searchTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                searchTextFieldFocusLost(evt);
+            }
+        });
+        searchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchTextFieldKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout settingsPanelLayout = new javax.swing.GroupLayout(settingsPanel);
         settingsPanel.setLayout(settingsPanelLayout);
         settingsPanelLayout.setHorizontalGroup(
             settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 969, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingsPanelLayout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
         settingsPanelLayout.setVerticalGroup(
             settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(settingsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(searchTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
@@ -115,7 +142,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addComponent(homePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(settingsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -126,7 +153,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             .addGroup(topPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(homePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(settingsPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
@@ -247,6 +274,21 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_podActionPerformed
 
+    private void searchTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusLost
+        if(searchTextField.getText().equals("")) {
+            searchTextField.setText("Sök...");
+            searchTextField.setForeground(new java.awt.Color(153,153,153));
+        }
+    }//GEN-LAST:event_searchTextFieldFocusLost
+
+    private void searchTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextFieldKeyPressed
+        if(searchTextField.getText().equals("Sök...")) {
+            searchTextField.setText("");
+            searchTextField.setForeground(Color.black);
+            search(searchTextField.getText());
+        }
+    }//GEN-LAST:event_searchTextFieldKeyPressed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -255,14 +297,15 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     private categoryViewPanel categoryViewPanel1;
     private checkOutPanel checkOutPanel1;
     private javax.swing.JButton favoriteButton;
-    private javax.swing.JPanel homePanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel mainCenterPanel;
     private javax.swing.JButton pod;
     private javax.swing.JPanel registerPanel;
+    private javax.swing.JPanel search;
     private javax.swing.JPanel searchPanel;
+    private javax.swing.JTextField searchTextField;
     private javax.swing.JPanel settingsPanel;
     private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
