@@ -189,7 +189,7 @@
                       <Component id="campaignbutton" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -199,6 +199,11 @@
                       </Group>
                       <Component id="bread" alignment="0" max="32767" attributes="0"/>
                       <Component id="dairy" alignment="0" max="32767" attributes="0"/>
+                      <Component id="fruit" alignment="0" max="32767" attributes="0"/>
+                      <Component id="meat" alignment="0" max="32767" attributes="0"/>
+                      <Component id="dry" alignment="0" max="32767" attributes="0"/>
+                      <Component id="drinks" alignment="0" max="32767" attributes="0"/>
+                      <Component id="sweets" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -218,7 +223,17 @@
                   <Component id="bread" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="dairy" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="640" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="fruit" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="meat" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="dry" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="drinks" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="sweets" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="495" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -266,6 +281,46 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dairyActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="fruit">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Frukt &amp; Gr&#xf6;nt"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fruitActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="meat">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="K&#xf6;tt &amp; Fisk"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="meatActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="dry">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Torrvaror"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dryActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="drinks">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Drycker"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="drinksActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="sweets">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="S&#xf6;tsaker"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sweetsActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

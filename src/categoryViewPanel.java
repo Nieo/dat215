@@ -12,10 +12,9 @@
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.util.*;
-import javax.swing.JPanel;
 import se.chalmers.ait.dat215.project.*;
 public class categoryViewPanel extends javax.swing.JPanel {
-   
+    
     /**
      * Creates new form categoryViewPanel
      */
@@ -32,7 +31,6 @@ public class categoryViewPanel extends javax.swing.JPanel {
             background = !background;
             //System.out.println(p.getName());
         }
-        repaint();
         itemContainerPanel.setBackground(Color.GREEN);
     }
          

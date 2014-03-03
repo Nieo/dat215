@@ -34,10 +34,19 @@ public class MainContainerJFrame extends javax.swing.JFrame {
   
     public void addContorler(ActionListener al){
         jButton1.addActionListener(al);
-        bread.addActionListener(al);
+       
         favoriteButton.addActionListener(al);
         campaignbutton.addActionListener(al);
+       
+        searchTextField.addActionListener(al);
+        bread.addActionListener(al);
         dairy.addActionListener(al);
+        fruit.addActionListener(al);
+        meat.addActionListener(al);
+        dry.addActionListener(al);
+        drinks.addActionListener(al);
+        sweets.addActionListener(al);
+        
     }
     public void search(String value) {
         IMatDataHandler dh = IMatDataHandler.getInstance();
@@ -64,6 +73,11 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         bread = new javax.swing.JButton();
         dairy = new javax.swing.JButton();
+        fruit = new javax.swing.JButton();
+        meat = new javax.swing.JButton();
+        dry = new javax.swing.JButton();
+        drinks = new javax.swing.JButton();
+        sweets = new javax.swing.JButton();
         registerPanel = new javax.swing.JPanel();
         mainCenterPanel = new javax.swing.JPanel();
 
@@ -193,6 +207,41 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             }
         });
 
+        fruit.setText("Frukt & Grönt");
+        fruit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fruitActionPerformed(evt);
+            }
+        });
+
+        meat.setText("Kött & Fisk");
+        meat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                meatActionPerformed(evt);
+            }
+        });
+
+        dry.setText("Torrvaror");
+        dry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dryActionPerformed(evt);
+            }
+        });
+
+        drinks.setText("Drycker");
+        drinks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drinksActionPerformed(evt);
+            }
+        });
+
+        sweets.setText("Sötsaker");
+        sweets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sweetsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout categoryPanelLayout = new javax.swing.GroupLayout(categoryPanel);
         categoryPanel.setLayout(categoryPanelLayout);
         categoryPanelLayout.setHorizontalGroup(
@@ -202,14 +251,19 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                     .addComponent(favoriteButton)
                     .addComponent(campaignbutton)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(categoryPanelLayout.createSequentialGroup()
                 .addGroup(categoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(categoryPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(bread, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dairy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(dairy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fruit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(meat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(drinks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sweets, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         categoryPanelLayout.setVerticalGroup(
@@ -226,7 +280,17 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addComponent(bread)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dairy)
-                .addGap(0, 640, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fruit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(meat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dry)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(drinks)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sweets)
+                .addGap(0, 495, Short.MAX_VALUE))
         );
 
         getContentPane().add(categoryPanel, java.awt.BorderLayout.LINE_START);
@@ -284,6 +348,26 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_searchTextFieldKeyPressed
 
+    private void fruitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fruitActionPerformed
+
+    private void meatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_meatActionPerformed
+
+    private void dryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dryActionPerformed
+
+    private void drinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drinksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_drinksActionPerformed
+
+    private void sweetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sweetsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sweetsActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -291,15 +375,20 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     private javax.swing.JButton campaignbutton;
     private javax.swing.JPanel categoryPanel;
     private javax.swing.JButton dairy;
+    private javax.swing.JButton drinks;
+    private javax.swing.JButton dry;
     private javax.swing.JButton favoriteButton;
+    private javax.swing.JButton fruit;
     private javax.swing.JButton jButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel mainCenterPanel;
+    private javax.swing.JButton meat;
     private javax.swing.JPanel registerPanel;
     private javax.swing.JPanel search;
     private javax.swing.JPanel searchPanel;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JPanel settingsPanel;
+    private javax.swing.JButton sweets;
     private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
 }
