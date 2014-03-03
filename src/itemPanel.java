@@ -41,6 +41,13 @@ public class itemPanel extends javax.swing.JPanel {
         
         
     }
+    public Product getProduct(){
+        return p;
+    }
+    public Double getAmount(){
+        double d = Integer.parseInt(amountTextField.getText());
+        return  d;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -188,8 +195,7 @@ public class itemPanel extends javax.swing.JPanel {
     private void starButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_starButtonActionPerformed
         dh.addFavorite(p);
         starButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\starFilled.png"));
-        repaint();
-        System.out.println("        " + dh.isFavorite(p) + p.toString());
+    //    repaint();
     }//GEN-LAST:event_starButtonActionPerformed
 
     private void amountTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountTextFieldActionPerformed
@@ -223,13 +229,11 @@ public class itemPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_decrementButtonActionPerformed
 
     private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
-      ShoppingCart sc = dh.getShoppingCart();
-      double d = Integer.parseInt(amountTextField.getText());
-      sc.addProduct(p, WIDTH);
+
     }//GEN-LAST:event_addToCartButtonActionPerformed
 
     private void iconButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconButtonActionPerformed
-        iconButton.setIcon(dh.getImageIcon(p,64,64));
+       // iconButton.setIcon(dh.getImageIcon(p,64,64));
     }//GEN-LAST:event_iconButtonActionPerformed
 
 
