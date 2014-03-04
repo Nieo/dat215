@@ -21,6 +21,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainContainerJFrame
+     * @param al
      */
     public MainContainerJFrame(ActionListener al) {
         initComponents();
@@ -32,7 +33,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         return mainCenterPanel;
     }
   
-    public void addContorler(ActionListener al){
+    private void addContorler(ActionListener al){
         jButton1.addActionListener(al);
        
         favoriteButton.addActionListener(al);
@@ -42,6 +43,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         bread.addActionListener(al);
         dairy.addActionListener(al);
         fruit.addActionListener(al);
+        vegetables.addActionListener(al);
         meat.addActionListener(al);
         dry.addActionListener(al);
         drinks.addActionListener(al);
@@ -78,6 +80,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         dry = new javax.swing.JButton();
         drinks = new javax.swing.JButton();
         sweets = new javax.swing.JButton();
+        vegetables = new javax.swing.JButton();
         registerPanel = new javax.swing.JPanel();
         mainCenterPanel = new javax.swing.JPanel();
 
@@ -207,7 +210,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             }
         });
 
-        fruit.setText("Frukt & Grönt");
+        fruit.setText("Frukt");
         fruit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fruitActionPerformed(evt);
@@ -242,6 +245,13 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             }
         });
 
+        vegetables.setText("Grönsaker");
+        vegetables.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vegetablesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout categoryPanelLayout = new javax.swing.GroupLayout(categoryPanel);
         categoryPanel.setLayout(categoryPanelLayout);
         categoryPanelLayout.setHorizontalGroup(
@@ -263,7 +273,8 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                     .addComponent(meat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(dry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(drinks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sweets, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(sweets, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(vegetables, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         categoryPanelLayout.setVerticalGroup(
@@ -283,6 +294,8 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fruit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(vegetables)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(meat)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dry)
@@ -290,7 +303,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addComponent(drinks)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sweets)
-                .addGap(0, 495, Short.MAX_VALUE))
+                .addGap(0, 466, Short.MAX_VALUE))
         );
 
         getContentPane().add(categoryPanel, java.awt.BorderLayout.LINE_START);
@@ -368,6 +381,10 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sweetsActionPerformed
 
+    private void vegetablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vegetablesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vegetablesActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -390,6 +407,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel settingsPanel;
     private javax.swing.JButton sweets;
     private javax.swing.JPanel topPanel;
+    private javax.swing.JButton vegetables;
     // End of variables declaration//GEN-END:variables
 }
 

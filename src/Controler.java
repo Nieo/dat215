@@ -1,7 +1,6 @@
 
 import java.awt.CardLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.List;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.*;
@@ -25,6 +24,13 @@ public class Controler implements ActionListener{
     checkOutPanel checkoutPanel = new checkOutPanel();
     public Controler(){
         mainFrame.setVisible(true);
+        mainFrame.addWindowListener(new WindowAdapter(){
+            @Override
+            public void windowClosing(WindowEvent e){
+                dh.shutDown();
+                 e.getWindow().dispose();
+            }
+        });
         mainPanel.add(categoryViewPanel,"categoryViewPanel");
         mainPanel.add(checkoutPanel,"checkoutPanel");
         
@@ -43,7 +49,7 @@ public class Controler implements ActionListener{
         switch(ae.getActionCommand()){
             case("Mina Listor"):
                 for(ShoppingItem s: sc.getItems())
-                    System.out.println(s.getProduct().toString());
+                    System.out.println(s.getProduct().toString() + " " + s.getAmount());
                 break;
             case("Kampanj"):
                 System.out.println("Kampanjknapp");
@@ -65,16 +71,21 @@ public class Controler implements ActionListener{
                 cl.show(mainPanel, "categoryViewPanel");
                 categoryViewPanel.setCategory(dh.getProducts(ProductCategory.DAIRIES), "Mejeri", this);
                 break;
-            case("Frukt & Grönt"):
-                System.out.println("GrönaSaker");
+            case("Frukt"):
+                System.out.println("Fruits");
                 toDisplay = dh.getProducts(ProductCategory.BERRY);
                 toDisplay.addAll(dh.getProducts(ProductCategory.CITRUS_FRUIT));
                 toDisplay.addAll(dh.getProducts(ProductCategory.EXOTIC_FRUIT));
                 toDisplay.addAll(dh.getProducts(ProductCategory.VEGETABLE_FRUIT));
-                toDisplay.addAll(dh.getProducts(ProductCategory.CABBAGE));
                 toDisplay.addAll(dh.getProducts(ProductCategory.MELONS));
-                toDisplay.addAll(dh.getProducts(ProductCategory.ROOT_VEGETABLE));
                 toDisplay.addAll(dh.getProducts(ProductCategory.FRUIT));
+                cl.show(mainPanel, "categoryViewPanel");
+                categoryViewPanel.setCategory(toDisplay, "Frukt", this);
+                break;
+            case("Grönsaker"):
+                System.out.println("Gröna saker");
+                toDisplay = dh.getProducts(ProductCategory.CABBAGE);
+                toDisplay.addAll(dh.getProducts(ProductCategory.ROOT_VEGETABLE));
                 toDisplay.addAll(dh.getProducts(ProductCategory.HERB));
                 toDisplay.addAll(dh.getProducts(ProductCategory.POTATO_RICE));
                 cl.show(mainPanel, "categoryViewPanel");

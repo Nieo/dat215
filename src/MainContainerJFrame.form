@@ -204,6 +204,7 @@
                       <Component id="dry" alignment="0" max="32767" attributes="0"/>
                       <Component id="drinks" alignment="0" max="32767" attributes="0"/>
                       <Component id="sweets" alignment="0" max="32767" attributes="0"/>
+                      <Component id="vegetables" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -226,6 +227,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="fruit" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="vegetables" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="meat" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="dry" min="-2" max="-2" attributes="0"/>
@@ -233,7 +236,7 @@
                   <Component id="drinks" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="sweets" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="495" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="466" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -285,7 +288,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="fruit">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Frukt &amp; Gr&#xf6;nt"/>
+            <Property name="text" type="java.lang.String" value="Frukt"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fruitActionPerformed"/>
@@ -321,6 +324,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sweetsActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="vegetables">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gr&#xf6;nsaker"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vegetablesActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
