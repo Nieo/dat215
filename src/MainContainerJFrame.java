@@ -63,6 +63,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        shoppingCartPanel2 = new shoppingCartPanel();
         topPanel = new javax.swing.JPanel();
         search = new javax.swing.JPanel();
         searchPanel = new javax.swing.JPanel();
@@ -405,6 +406,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel searchPanel;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JPanel settingsPanel;
+    private shoppingCartPanel shoppingCartPanel2;
     private javax.swing.JButton sweets;
     private javax.swing.JPanel topPanel;
     private javax.swing.JButton vegetables;

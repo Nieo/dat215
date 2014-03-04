@@ -12,6 +12,7 @@
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.util.*;
+import javax.swing.JLabel;
 import se.chalmers.ait.dat215.project.*;
 public class categoryViewPanel extends javax.swing.JPanel {
     
@@ -25,13 +26,17 @@ public class categoryViewPanel extends javax.swing.JPanel {
     public void setCategory(List<Product> products, String name, ActionListener al){
         categoryNameLabel.setText(name);
         itemContainerPanel.removeAll();
+        itemContainerPanel.setBackground(Color.WHITE);
+        if(!products.isEmpty()){
         boolean background = false;
-        for(Product p: products){
-            itemContainerPanel.add(new itemPanel(p,background,al));
-            background = !background;
-            //System.out.println(p.getName());
+            for(Product p: products){
+                itemContainerPanel.add(new itemPanel(p,background,al));
+                background = !background;
+            }
+        }else{
+            itemContainerPanel.add(new JLabel("Du har inte lagt till några varor till favoriter"));
         }
-        itemContainerPanel.setBackground(Color.GREEN);
+        
     }
          
     /**

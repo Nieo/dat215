@@ -83,7 +83,7 @@ public class itemPanel extends javax.swing.JPanel {
         nameButton.setBorder(null);
 
         incrementButton.setBackground(new java.awt.Color(255, 255, 255));
-        incrementButton.setIcon(new javax.swing.ImageIcon("pictures/arrowUp.png")); // NOI18N
+        incrementButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\arrowUp.png")); // NOI18N
         incrementButton.setMaximumSize(new java.awt.Dimension(16, 16));
         incrementButton.setMinimumSize(new java.awt.Dimension(16, 16));
         incrementButton.setPreferredSize(new java.awt.Dimension(16, 16));
@@ -94,7 +94,7 @@ public class itemPanel extends javax.swing.JPanel {
         });
 
         decrementButton.setBackground(new java.awt.Color(255, 255, 255));
-        decrementButton.setIcon(new javax.swing.ImageIcon("pictures/arrowDown.png")); // NOI18N
+        decrementButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\arrowDown.png")); // NOI18N
         decrementButton.setMaximumSize(new java.awt.Dimension(16, 16));
         decrementButton.setMinimumSize(new java.awt.Dimension(16, 16));
         decrementButton.setPreferredSize(new java.awt.Dimension(16, 16));
@@ -150,9 +150,9 @@ public class itemPanel extends javax.swing.JPanel {
                 .addComponent(amountTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(unitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(starButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(moreButton)
@@ -234,7 +234,7 @@ public class itemPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_decrementButtonActionPerformed
 
     private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
-
+        amountTextField.setText("1");
     }//GEN-LAST:event_addToCartButtonActionPerformed
 
     private void iconButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconButtonActionPerformed

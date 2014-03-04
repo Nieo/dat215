@@ -23,6 +23,7 @@ public class Controler implements ActionListener{
     categoryViewPanel categoryViewPanel = new categoryViewPanel();
     checkOutPanel checkoutPanel = new checkOutPanel();
     public Controler(){
+       
         mainFrame.setVisible(true);
         mainFrame.addWindowListener(new WindowAdapter(){
             @Override
@@ -33,7 +34,7 @@ public class Controler implements ActionListener{
         });
         mainPanel.add(categoryViewPanel,"categoryViewPanel");
         mainPanel.add(checkoutPanel,"checkoutPanel");
-        
+       
     }
    
     
@@ -47,6 +48,11 @@ public class Controler implements ActionListener{
         List<Product> toDisplay;
         
         switch(ae.getActionCommand()){
+            case("Favoriter"):
+                System.out.println("I hate this shit");
+                cl.show(mainPanel, "categoryViewPanel");
+                categoryViewPanel.setCategory(dh.favorites(), "Favoriter", this);
+                break;
             case("Mina Listor"):
                 for(ShoppingItem s: sc.getItems())
                     System.out.println(s.getProduct().toString() + " " + s.getAmount());
@@ -59,7 +65,21 @@ public class Controler implements ActionListener{
                 System.out.println("Add to Cart pressed");
                 JButton j = (JButton)ae.getSource();
                 itemPanel p = (itemPanel)j.getParent();
-                sc.addProduct(p.getProduct(),p.getAmount());
+                Product product = p.getProduct();
+                Double amount = p.getAmount();
+                int i = 0;
+                boolean found = false;
+                for(ShoppingItem s : sc.getItems()){
+                    
+                    if(s.getProduct().equals(product)){
+                        s.setAmount(s.getAmount()+amount);
+                        found = true;
+                        break;
+                    }
+                    i++;
+                }
+                if(!found)
+                    sc.addProduct(product,amount);
                 break;
             case("Bröd"):
                 System.out.println("Brödknapp");
