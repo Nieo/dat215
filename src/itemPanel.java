@@ -31,7 +31,9 @@ public class itemPanel extends javax.swing.JPanel {
             setBackground(new Color(0xff,0xf2,0xc0));
         
         iconButton.setIcon(dh.getImageIcon(p, 48, 48));
+        iconButton.setBackground(this.getBackground());
         nameButton.setText(p.getName());
+        nameButton.setBackground(this.getBackground());
         unitLabel.setText(p.getUnitSuffix());
         priceLabel.setText(p.getPrice() + p.getUnit());
         addToCartButton.addActionListener(al);
@@ -69,10 +71,13 @@ public class itemPanel extends javax.swing.JPanel {
         moreButton = new javax.swing.JButton();
         addToCartButton = new javax.swing.JButton();
 
-        iconButton.setText("iamge");
+        setPreferredSize(new java.awt.Dimension(677, 52));
+
         iconButton.setBorder(null);
+        iconButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         iconButton.setMaximumSize(new java.awt.Dimension(64, 64));
         iconButton.setMinimumSize(new java.awt.Dimension(48, 48));
+        iconButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         iconButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iconButtonActionPerformed(evt);
@@ -138,11 +143,11 @@ public class itemPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(iconButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
+                .addComponent(iconButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(incrementButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(decrementButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -166,10 +171,8 @@ public class itemPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(iconButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
-                        .addGap(12, 12, 12))
+                        .addComponent(nameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,6 +192,9 @@ public class itemPanel extends javax.swing.JPanel {
                                         .addComponent(moreButton)
                                         .addComponent(addToCartButton)))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(iconButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -12,7 +12,7 @@
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.util.*;
-import javax.swing.JLabel;
+import javax.swing.*;
 import se.chalmers.ait.dat215.project.*;
 public class categoryViewPanel extends javax.swing.JPanel {
     
@@ -33,12 +33,22 @@ public class categoryViewPanel extends javax.swing.JPanel {
                 itemContainerPanel.add(new itemPanel(p,background,al));
                 background = !background;
             }
+            if(products.size() < 11){
+                
+                for(int i = products.size(); i < 11; i++)
+                    itemContainerPanel.add(new invisiblePanel());
+            }
         }else{
-            itemContainerPanel.add(new JLabel("Du har inte lagt till några varor till favoriter"));
+            itemContainerPanel.add(new JLabel("Det finns inget här"));
         }
         
     }
-         
+    private class invisiblePanel extends JPanel{
+        public invisiblePanel(){
+            setSize(100, 51);
+            setVisible(false);
+        }
+    }    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,8 +87,8 @@ public class categoryViewPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(categoryNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(137, 137, 137))
         );
