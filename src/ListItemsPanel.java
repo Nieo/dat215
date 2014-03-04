@@ -30,6 +30,15 @@ public class ListItemsPanel extends javax.swing.JPanel {
             innerItemsPanel.add(new SingleListItem(shoppingItem,false));
         }
     }
+    
+    public void updateFillListItemsPanel(ShoppingCart cartList){
+        innerItemsPanel.removeAll();
+        List<ShoppingItem> listItems= cartList.getItems();
+        for( ShoppingItem shoppingItem: listItems ){
+            innerItemsPanel.add(new SingleListItem(shoppingItem,false));
+        }
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
