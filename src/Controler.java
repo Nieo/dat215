@@ -80,7 +80,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
                 if(categoryViewPanel.getLabel() == "Favoriter")
                     categoryViewPanel.setCategory(dh.favorites(), "Favoriter", this);
                 break;
-            case("Add to cart"):
+            case("Lägg till"):
                 System.out.println("Add to Cart pressed");
                 JButton j = (JButton)ae.getSource();
                 itemPanel p = (itemPanel)j.getParent();

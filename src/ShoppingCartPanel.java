@@ -102,6 +102,8 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
 
         checkoutCartButton.setText("Till kassa");
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         cartHolderPanel.setBackground(new java.awt.Color(229, 240, 255));
         cartHolderPanel.setLayout(new java.awt.GridLayout(0, 1));
         jScrollPane1.setViewportView(cartHolderPanel);

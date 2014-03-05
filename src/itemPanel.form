@@ -26,7 +26,7 @@
               <Component id="iconButton" min="-2" pref="65" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="nameButton" min="-2" pref="144" max="-2" attributes="0"/>
-              <EmptySpace pref="55" max="32767" attributes="0"/>
+              <EmptySpace pref="79" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="incrementButton" alignment="1" min="-2" pref="19" max="-2" attributes="0"/>
                   <Component id="decrementButton" alignment="1" min="-2" pref="19" max="-2" attributes="0"/>
@@ -195,12 +195,13 @@
     </Component>
     <Component class="javax.swing.JButton" name="moreButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="more"/>
+        <Property name="text" type="java.lang.String" value="Mer"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="addToCartButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add to cart"/>
+        <Property name="text" type="java.lang.String" value="L&#xe4;gg till"/>
+        <Property name="actionCommand" type="java.lang.String" value="L&#xe4;gg till"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addToCartButtonActionPerformed"/>
