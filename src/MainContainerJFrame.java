@@ -32,6 +32,9 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     public JPanel getMainPanel(){
         return mainCenterPanel;
     }
+    public ShoppingCartPanel getShoppingCartPanel(){
+        return shoppingCartPanel1;
+    }
   
     private void addContorler(ActionListener al){
         jButton1.addActionListener(al);
@@ -63,7 +66,6 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        shoppingCartPanel2 = new shoppingCartPanel();
         topPanel = new javax.swing.JPanel();
         search = new javax.swing.JPanel();
         searchPanel = new javax.swing.JPanel();
@@ -83,7 +85,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         sweets = new javax.swing.JButton();
         vegetables = new javax.swing.JButton();
         registerPanel = new javax.swing.JPanel();
-        shoppingCartPanel1 = new shoppingCartPanel();
+        shoppingCartPanel1 = new ShoppingCartPanel();
         mainCenterPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -310,13 +312,13 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         getContentPane().add(categoryPanel, java.awt.BorderLayout.LINE_START);
 
         registerPanel.setBackground(new java.awt.Color(208, 208, 208));
-        registerPanel.setPreferredSize(new java.awt.Dimension(200, 260));
+        registerPanel.setPreferredSize(new java.awt.Dimension(240, 260));
 
         javax.swing.GroupLayout registerPanelLayout = new javax.swing.GroupLayout(registerPanel);
         registerPanel.setLayout(registerPanelLayout);
         registerPanelLayout.setHorizontalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         registerPanelLayout.setVerticalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,8 +410,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel searchPanel;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JPanel settingsPanel;
-    private shoppingCartPanel shoppingCartPanel1;
-    private shoppingCartPanel shoppingCartPanel2;
+    private ShoppingCartPanel shoppingCartPanel1;
     private javax.swing.JButton sweets;
     private javax.swing.JPanel topPanel;
     private javax.swing.JButton vegetables;

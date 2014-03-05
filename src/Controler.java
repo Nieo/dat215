@@ -22,6 +22,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
     JPanel mainPanel = mainFrame.getMainPanel();
     categoryViewPanel categoryViewPanel = new categoryViewPanel();
     checkOutPanel checkoutPanel = new checkOutPanel();
+    ShoppingCartPanel shoppingCartPanel = mainFrame.getShoppingCartPanel();
     public Controler(){
        
         mainFrame.setVisible(true);
@@ -34,6 +35,8 @@ public class Controler implements ActionListener, ShoppingCartListener{
         });
         mainPanel.add(categoryViewPanel,"categoryViewPanel");
         mainPanel.add(checkoutPanel,"checkoutPanel");
+        shoppingCartPanel.setActionListener(this);
+        sc.addShoppingCartListener(this);
        
     }
    
@@ -53,13 +56,23 @@ public class Controler implements ActionListener, ShoppingCartListener{
                 cl.show(mainPanel, "categoryViewPanel");
                 categoryViewPanel.setCategory(dh.favorites(), "Favoriter", this);
                 break;
+            case("Kampanj"):
+                System.out.println("Not implemented feature button pressed, Kampanj");
+                break;
             case("Mina Listor"):
                 for(ShoppingItem s: sc.getItems())
                     System.out.println(s.getProduct().toString() + " " + s.getAmount());
                 break;
-            case("Kampanj"):
-                System.out.println("Kampanjknapp");
+            case("Till kassa"):
+                System.out.println("CheckoutButton pressed");
                 cl.show(mainPanel,"checkoutPanel");
+                break;
+            case("Spara"):
+                System.out.println("Not implemented feature button pressed, Spara");
+                break;
+            case("Rensa"):
+                System.out.println("kill the shoppingcart. NOW!");
+                sc.clear();
                 break;
             case("Add to cart"):
                 System.out.println("Add to Cart pressed");
@@ -80,6 +93,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
                 }
                 if(!found)
                     sc.addProduct(product,amount);
+                sc.fireShoppingCartChanged(null, found);
                 break;
             case("Bröd"):
                 System.out.println("Brödknapp");
@@ -153,7 +167,8 @@ public class Controler implements ActionListener, ShoppingCartListener{
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Something happens to the shoppingcart");
+        shoppingCartPanel.updateShoppingCartPanel(sc);
     }
     
 }

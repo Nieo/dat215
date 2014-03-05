@@ -1,6 +1,7 @@
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
+import java.awt.event.ActionListener;
 import java.util.*;
+import javax.swing.JPanel;
 import se.chalmers.ait.dat215.project.*;
 
 /*
@@ -13,21 +14,22 @@ import se.chalmers.ait.dat215.project.*;
  *
  * @author Administratör
  */
-public class shoppingCartPanel extends javax.swing.JPanel {
+public class ShoppingCartPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form shoppingCartPanel
      */
-    public shoppingCartPanel() {
+    public ShoppingCartPanel() {
         initComponents();
     }
-    public shoppingCartPanel(ShoppingCart cartList){
+    public ShoppingCartPanel(ShoppingCart cartList){
         this();
         totalSumLabel.setText(String.valueOf(cartList.getTotal()));
         List<ShoppingItem> listItems= cartList.getItems();
         for( ShoppingItem shoppingItem: listItems ){
             cartHolderPanel.add(new SingleListItem(shoppingItem,true));
         }
+        
     }
     
     public void updateShoppingCartPanel(ShoppingCart cartList){
@@ -37,10 +39,24 @@ public class shoppingCartPanel extends javax.swing.JPanel {
         for( ShoppingItem shoppingItem: listItems ){
             cartHolderPanel.add(new SingleListItem(shoppingItem,true));
         }
+        if(listItems.size() < 17){
+            System.err.print("less than 17");
+            for(int i = listItems.size(); i < 17; i++)
+                cartHolderPanel.add(new invisiblePanel());
+        }
+        
     }
-    
-    
-
+    public void setActionListener(ActionListener al){
+        checkoutCartButton.addActionListener(al);
+        clearCartButton.addActionListener(al);
+        saveCartButton.addActionListener(al);
+    }
+   private class invisiblePanel extends JPanel{
+        public invisiblePanel(){
+            setSize(100, 25);
+            setVisible(false);
+        }
+    }    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -83,7 +99,7 @@ public class shoppingCartPanel extends javax.swing.JPanel {
 
         checkoutCartButton.setText("Till kassa");
 
-        cartHolderPanel.setLayout(new javax.swing.BoxLayout(cartHolderPanel, javax.swing.BoxLayout.PAGE_AXIS));
+        cartHolderPanel.setLayout(new java.awt.GridLayout(0, 1));
         jScrollPane1.setViewportView(cartHolderPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

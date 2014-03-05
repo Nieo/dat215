@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="shoppingCartPanel" name="shoppingCartPanel2">
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -343,7 +339,7 @@
           <Color blue="d0" green="d0" red="d0" type="rgb"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[200, 260]"/>
+          <Dimension value="[240, 260]"/>
         </Property>
       </Properties>
       <Constraints>
@@ -355,7 +351,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="shoppingCartPanel1" alignment="0" pref="200" max="32767" attributes="0"/>
+              <Component id="shoppingCartPanel1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -368,7 +364,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="shoppingCartPanel" name="shoppingCartPanel1">
+        <Component class="ShoppingCartPanel" name="shoppingCartPanel1">
         </Component>
       </SubComponents>
     </Container>
