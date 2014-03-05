@@ -122,7 +122,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Erik\Documents\NetBeansProjects\dat215.2\pictures\arrowUp.png"/>
+          <Image iconType="3" name="/arrowUp.png"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[16, 16]"/>
@@ -144,7 +144,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Erik\Documents\NetBeansProjects\dat215.2\pictures\arrowDown.png"/>
+          <Image iconType="3" name="/arrowDown.png"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[16, 16]"/>
@@ -184,7 +184,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Erik\Documents\NetBeansProjects\dat215.2\pictures\starEmpty.png"/>
+          <Image iconType="3" name="/starEmpty.png"/>
         </Property>
         <Property name="actionCommand" type="java.lang.String" value="Star"/>
         <Property name="borderPainted" type="boolean" value="false"/>
