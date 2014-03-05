@@ -1,6 +1,10 @@
 
 
 import java.awt.*;
+import java.awt.event.ItemEvent;
+import se.chalmers.ait.dat215.project.CreditCard;
+import se.chalmers.ait.dat215.project.Customer;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,12 +17,17 @@ import java.awt.*;
  * @author Sebastian
  */
 public class checkOutPanel extends javax.swing.JPanel {
-
+    
+    
+    IMatDataHandler iMatShared = IMatDataHandler.getInstance();
+    CreditCard cc = iMatShared.getCreditCard();
+    Customer customer = iMatShared.getCustomer();
     /**
      * Creates new form checkOutPanel
      */
     public checkOutPanel() {
         initComponents();
+        
     }
 
     /**
@@ -30,28 +39,42 @@ public class checkOutPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        CheckOutStage2RadioButtonGroup = new javax.swing.ButtonGroup();
+        deliveryAdressRadioButtonGroup = new javax.swing.ButtonGroup();
         paymentRadioButtonGroup = new javax.swing.ButtonGroup();
         checkOutStage1Panel = new javax.swing.JPanel();
-        titleLabel1 = new javax.swing.JLabel();
-        firstNameLabel1 = new javax.swing.JLabel();
-        firstNameTextFieldl1 = new javax.swing.JTextField();
-        lastNameLabel1 = new javax.swing.JLabel();
-        lastNameTextField1 = new javax.swing.JTextField();
-        adressLabel1 = new javax.swing.JLabel();
-        adressTextField1 = new javax.swing.JTextField();
-        zipCodeLabel1 = new javax.swing.JLabel();
-        zipCodeTextField1 = new javax.swing.JTextField();
-        cityLabel1 = new javax.swing.JLabel();
-        cityTextField1 = new javax.swing.JTextField();
-        phoneLabel1 = new javax.swing.JLabel();
-        phoneTextField1 = new javax.swing.JTextField();
-        emailLabel1 = new javax.swing.JLabel();
-        emailTextField1 = new javax.swing.JTextField();
-        totalPriceLabel1 = new javax.swing.JLabel();
+        billingTitleLabel = new javax.swing.JLabel();
+        deliveryTimePanel = new javax.swing.JPanel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jComboBox1 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        billingFirstNameLabel = new javax.swing.JLabel();
+        billingFirstNameTextField = new javax.swing.JTextField();
+        billingLastNameLabel = new javax.swing.JLabel();
+        billingLastNameTextField = new javax.swing.JTextField();
+        billingAdressLabel = new javax.swing.JLabel();
+        billingAdressTextField = new javax.swing.JTextField();
+        billingZipCodeLabel = new javax.swing.JLabel();
+        billingZipCodeTextField = new javax.swing.JTextField();
+        billingCityLabel = new javax.swing.JLabel();
+        billingCityTextField = new javax.swing.JTextField();
+        billingPhoneLabel = new javax.swing.JLabel();
+        billingPhoneTextField = new javax.swing.JTextField();
+        billingEmailLabel = new javax.swing.JLabel();
+        billingEmailTextField = new javax.swing.JTextField();
+        TotalPriceLabel = new javax.swing.JLabel();
         totalPriceNumberLabel1 = new javax.swing.JLabel();
-        stepLabel1 = new javax.swing.JLabel();
-        nextButton1 = new javax.swing.JButton();
+        payButton = new javax.swing.JButton();
         paymentPanel = new javax.swing.JPanel();
         cardPaymentPanel = new javax.swing.JPanel();
         cardNumberTextField = new javax.swing.JTextField();
@@ -62,102 +85,260 @@ public class checkOutPanel extends javax.swing.JPanel {
         invoicePaymentPanel = new javax.swing.JPanel();
         personalNumberTextField = new javax.swing.JTextField();
         personalNumberLabel = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
         cardPaymentRadioButton = new javax.swing.JRadioButton();
         invoicePaymentRadioButton = new javax.swing.JRadioButton();
-        checkOutStage2Panel = new javax.swing.JPanel();
-        titleLabel = new javax.swing.JLabel();
-        firstNameLabel = new javax.swing.JLabel();
-        firstNameTextFieldl = new javax.swing.JTextField();
-        lastNameLabel = new javax.swing.JLabel();
-        lastNameTextField = new javax.swing.JTextField();
-        adressLabel = new javax.swing.JLabel();
-        adressTextField = new javax.swing.JTextField();
-        zipCodeLabel = new javax.swing.JLabel();
-        zipCodeTextField = new javax.swing.JTextField();
-        cityLabel = new javax.swing.JLabel();
-        cityTextField = new javax.swing.JTextField();
-        phoneLabel = new javax.swing.JLabel();
-        phoneTextField = new javax.swing.JTextField();
-        emailLabel = new javax.swing.JLabel();
-        emailTextField = new javax.swing.JTextField();
-        totalPriceLabel = new javax.swing.JLabel();
-        totalPriceNumberLabel = new javax.swing.JLabel();
-        stepLabel = new javax.swing.JLabel();
-        sameAdressRadioButton = new javax.swing.JRadioButton();
+        deliveryEmailTextField = new javax.swing.JTextField();
+        deliveryPhoneTextField = new javax.swing.JTextField();
+        deliveryCityTextField = new javax.swing.JTextField();
+        deliveryZipCodeTextField = new javax.swing.JTextField();
+        deliveryAdressTextField = new javax.swing.JTextField();
+        deliveryLastNameTextField = new javax.swing.JTextField();
+        deliveryFirstNameTextField = new javax.swing.JTextField();
         newAdressRadioButton = new javax.swing.JRadioButton();
-        nextButton = new javax.swing.JButton();
-        checkOutStage3Panel = new javax.swing.JPanel();
-        titleLabel2 = new javax.swing.JLabel();
-        totalPriceLabel2 = new javax.swing.JLabel();
-        totalPriceNumberLabel2 = new javax.swing.JLabel();
-        stepLabel2 = new javax.swing.JLabel();
-        nextButton2 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        sameAdressRadioButton = new javax.swing.JRadioButton();
+        deliveryFirstNameLabel = new javax.swing.JLabel();
+        deliveryLastNameLabel = new javax.swing.JLabel();
+        deliveryAdressLabel = new javax.swing.JLabel();
+        deliveryZipCodeLabel = new javax.swing.JLabel();
+        deliveryCityLabel = new javax.swing.JLabel();
+        deliveryPhoneLabel = new javax.swing.JLabel();
+        deliveryEmailLabel = new javax.swing.JLabel();
 
+        setMinimumSize(new java.awt.Dimension(981, 660));
         setPreferredSize(new java.awt.Dimension(981, 326));
         setLayout(new java.awt.CardLayout());
 
-        checkOutStage1Panel.setBackground(new java.awt.Color(255, 255, 255));
+        checkOutStage1Panel.setBackground(new java.awt.Color(255, 247, 217));
         checkOutStage1Panel.setForeground(new java.awt.Color(255, 255, 255));
-        checkOutStage1Panel.setPreferredSize(new java.awt.Dimension(981, 315));
+        checkOutStage1Panel.setMaximumSize(new java.awt.Dimension(981, 700));
+        checkOutStage1Panel.setMinimumSize(new java.awt.Dimension(981, 660));
+        checkOutStage1Panel.setPreferredSize(new java.awt.Dimension(981, 660));
 
-        titleLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        titleLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleLabel1.setText("Fakturaadress");
+        billingTitleLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        billingTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        billingTitleLabel.setText("Betalningsadress");
 
-        firstNameLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        firstNameLabel1.setText("Förnamn");
+        deliveryTimePanel.setBackground(new java.awt.Color(255, 242, 192));
+        deliveryTimePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deliveryTimePanel.setMaximumSize(new java.awt.Dimension(400, 198));
+        deliveryTimePanel.setPreferredSize(new java.awt.Dimension(400, 198));
 
-        lastNameLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lastNameLabel1.setText("Efternamn");
+        jRadioButton1.setBackground(new java.awt.Color(255, 242, 192));
+        jRadioButton1.setText("Snarast (inom 48h)");
 
-        adressLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        adressLabel1.setText("Adress");
+        jRadioButton2.setBackground(new java.awt.Color(255, 242, 192));
+        jRadioButton2.setText("jRadioButton2");
 
-        zipCodeLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        zipCodeLabel1.setText("Post nummer");
+        jRadioButton3.setBackground(new java.awt.Color(255, 242, 192));
+        jRadioButton3.setText("08-11");
 
-        cityLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        cityLabel1.setText("Stad");
+        jRadioButton4.setBackground(new java.awt.Color(255, 242, 192));
+        jRadioButton4.setText("11-14");
 
-        phoneLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        phoneLabel1.setText("Telefon nummer");
+        jRadioButton5.setBackground(new java.awt.Color(255, 242, 192));
+        jRadioButton5.setText("14-17");
 
-        emailLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        emailLabel1.setText("Epost");
+        jRadioButton6.setBackground(new java.awt.Color(255, 242, 192));
+        jRadioButton6.setText("17-21");
 
-        totalPriceLabel1.setText("Totalt Pris");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dag", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "25", "26", "27", "28", "29", "30", "31" }));
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Månad", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+
+        jLabel1.setText("Leveransdag");
+
+        jLabel2.setText("Tid på dygnet");
+
+        jLabel3.setText("Morgon");
+
+        jLabel4.setText("Lunch");
+
+        jLabel5.setText("Eftermiddag");
+
+        jLabel7.setText("Kväll");
+
+        javax.swing.GroupLayout deliveryTimePanelLayout = new javax.swing.GroupLayout(deliveryTimePanel);
+        deliveryTimePanel.setLayout(deliveryTimePanelLayout);
+        deliveryTimePanelLayout.setHorizontalGroup(
+            deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jRadioButton3)
+                        .addGap(17, 17, 17)
+                        .addComponent(jRadioButton4)
+                        .addGap(14, 14, 14)
+                        .addComponent(jRadioButton5)
+                        .addGap(19, 19, 19)
+                        .addComponent(jRadioButton6))
+                    .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(92, Short.MAX_VALUE))
+            .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                    .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                            .addGap(61, 61, 61)
+                            .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jRadioButton1)
+                                .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                            .addGap(29, 29, 29)
+                            .addComponent(jLabel1))
+                        .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addComponent(jLabel3))
+                        .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                            .addGap(78, 78, 78)
+                            .addComponent(jLabel4)
+                            .addGap(42, 42, 42)
+                            .addComponent(jLabel5)
+                            .addGap(30, 30, 30)
+                            .addComponent(jLabel7)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        deliveryTimePanelLayout.setVerticalGroup(
+            deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deliveryTimePanelLayout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(31, 31, 31)
+                .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton6)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton5))
+                .addGap(17, 17, 17))
+            .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(deliveryTimePanelLayout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(jLabel1)
+                    .addGap(4, 4, 4)
+                    .addComponent(jRadioButton1)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jRadioButton2)
+                    .addGap(44, 44, 44)
+                    .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel7)
+                        .addComponent(jLabel5))
+                    .addContainerGap(44, Short.MAX_VALUE)))
+        );
+
+        billingFirstNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        billingFirstNameLabel.setText("Förnamn");
+
+        billingFirstNameTextField.setText(customer.getFirstName());
+        billingFirstNameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                billingFirstNameTextFieldFocusLost(evt);
+            }
+        });
+
+        billingLastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        billingLastNameLabel.setText("Efternamn");
+
+        billingLastNameTextField.setText(customer.getLastName());
+        billingLastNameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                billingLastNameTextFieldFocusLost(evt);
+            }
+        });
+
+        billingAdressLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        billingAdressLabel.setText("Adress");
+
+        billingAdressTextField.setText(customer.getAddress());
+        billingAdressTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                billingAdressTextFieldFocusLost(evt);
+            }
+        });
+
+        billingZipCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        billingZipCodeLabel.setText("Post nummer");
+
+        billingZipCodeTextField.setText(customer.getPostCode());
+        billingZipCodeTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                billingZipCodeTextFieldFocusLost(evt);
+            }
+        });
+
+        billingCityLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        billingCityLabel.setText("Stad");
+
+        billingCityTextField.setText(customer.getPostAddress());
+        billingCityTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                billingCityTextFieldFocusLost(evt);
+            }
+        });
+
+        billingPhoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        billingPhoneLabel.setText("Telefon nummer");
+
+        billingPhoneTextField.setText(customer.getPhoneNumber());
+        billingPhoneTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                billingPhoneTextFieldFocusLost(evt);
+            }
+        });
+
+        billingEmailLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        billingEmailLabel.setText("Epost");
+
+        billingEmailTextField.setText(customer.getEmail());
+        billingEmailTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                billingEmailTextFieldFocusLost(evt);
+            }
+        });
+
+        TotalPriceLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        TotalPriceLabel.setText("Totalt Pris");
+
+        totalPriceNumberLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         totalPriceNumberLabel1.setText("0:-");
 
-        stepLabel1.setText("Steg 1 av 3");
-
-        nextButton1.setText("Nästa");
-        nextButton1.addActionListener(new java.awt.event.ActionListener() {
+        payButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        payButton.setText("Betala");
+        payButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nextButton1ActionPerformed(evt);
+                payButtonActionPerformed(evt);
             }
         });
 
         paymentPanel.setLayout(new java.awt.CardLayout());
 
+        cardPaymentPanel.setBackground(new java.awt.Color(255, 242, 192));
+        cardPaymentPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cardPaymentPanel.setToolTipText("Kort betalning");
 
         cardNumberTextField.setText("Kortnummer");
+        cardNumberTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cardNumberTextFieldFocusGained(evt);
+            }
+        });
+        cardNumberTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cardNumberTextFieldKeyPressed(evt);
+            }
+        });
 
         cardMonthComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Månad", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
@@ -223,7 +404,7 @@ public class checkOutPanel extends javax.swing.JPanel {
                 .addComponent(personalNumberLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(personalNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         invoicePaymentPanelLayout.setVerticalGroup(
             invoicePaymentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,461 +413,263 @@ public class checkOutPanel extends javax.swing.JPanel {
                 .addGroup(invoicePaymentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(personalNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(personalNumberLabel))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         paymentPanel.add(invoicePaymentPanel, "invoiceCard");
 
+        titleLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("Leveransadress");
+
+        cardPaymentRadioButton.setBackground(new java.awt.Color(255, 242, 192));
         paymentRadioButtonGroup.add(cardPaymentRadioButton);
         cardPaymentRadioButton.setSelected(true);
         cardPaymentRadioButton.setText("Kortbetalning");
+        cardPaymentRadioButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cardPaymentRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardPaymentRadioButtonActionPerformed(evt);
             }
         });
 
+        invoicePaymentRadioButton.setBackground(new java.awt.Color(255, 242, 192));
         paymentRadioButtonGroup.add(invoicePaymentRadioButton);
         invoicePaymentRadioButton.setText("Faktura");
+        invoicePaymentRadioButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         invoicePaymentRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 invoicePaymentRadioButtonActionPerformed(evt);
             }
         });
 
+        deliveryEmailTextField.setEditable(false);
+
+        deliveryPhoneTextField.setEditable(false);
+
+        deliveryCityTextField.setEditable(false);
+
+        deliveryZipCodeTextField.setEditable(false);
+
+        deliveryAdressTextField.setEditable(false);
+
+        deliveryLastNameTextField.setEditable(false);
+
+        deliveryFirstNameTextField.setEditable(false);
+
+        newAdressRadioButton.setBackground(new java.awt.Color(255, 247, 217));
+        deliveryAdressRadioButtonGroup.add(newAdressRadioButton);
+        newAdressRadioButton.setText("Ny adress");
+        newAdressRadioButton.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                newAdressRadioButtonItemStateChanged(evt);
+            }
+        });
+
+        sameAdressRadioButton.setBackground(new java.awt.Color(255, 247, 217));
+        deliveryAdressRadioButtonGroup.add(sameAdressRadioButton);
+        sameAdressRadioButton.setSelected(true);
+        sameAdressRadioButton.setText("Samma ");
+        sameAdressRadioButton.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                sameAdressRadioButtonItemStateChanged(evt);
+            }
+        });
+
+        deliveryFirstNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        deliveryFirstNameLabel.setText("Förnamn");
+
+        deliveryLastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        deliveryLastNameLabel.setText("Efternamn");
+
+        deliveryAdressLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        deliveryAdressLabel.setText("Adress");
+
+        deliveryZipCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        deliveryZipCodeLabel.setText("Post nummer");
+
+        deliveryCityLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        deliveryCityLabel.setText("Stad");
+
+        deliveryPhoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        deliveryPhoneLabel.setText("Telefon nummer");
+
+        deliveryEmailLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        deliveryEmailLabel.setText("Epost");
+
         javax.swing.GroupLayout checkOutStage1PanelLayout = new javax.swing.GroupLayout(checkOutStage1Panel);
         checkOutStage1Panel.setLayout(checkOutStage1PanelLayout);
         checkOutStage1PanelLayout.setHorizontalGroup(
             checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage1PanelLayout.createSequentialGroup()
+            .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
                 .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nextButton1)
-                            .addComponent(stepLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(phoneLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(zipCodeLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cityLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adressLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lastNameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(firstNameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(emailLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(emailTextField1)
-                            .addComponent(lastNameTextField1)
-                            .addComponent(adressTextField1)
-                            .addComponent(phoneTextField1)
-                            .addComponent(cityTextField1)
-                            .addComponent(zipCodeTextField1)
-                            .addComponent(firstNameTextFieldl1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
-                                .addComponent(paymentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(78, 78, 78)
-                                .addComponent(totalPriceLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(totalPriceNumberLabel1))
+                                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(billingPhoneLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(billingCityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(billingAdressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(billingLastNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(billingFirstNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(billingEmailLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(billingZipCodeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(billingEmailTextField)
+                                    .addComponent(billingLastNameTextField)
+                                    .addComponent(billingAdressTextField)
+                                    .addComponent(billingPhoneTextField)
+                                    .addComponent(billingCityTextField)
+                                    .addComponent(billingZipCodeTextField)
+                                    .addComponent(billingFirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
+                                .addComponent(sameAdressRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(newAdressRadioButton))
+                            .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
+                                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(deliveryFirstNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(deliveryLastNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(deliveryAdressLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(deliveryZipCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(deliveryCityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(deliveryPhoneLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(deliveryEmailLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(deliveryEmailTextField)
+                                    .addComponent(deliveryLastNameTextField)
+                                    .addComponent(deliveryAdressTextField)
+                                    .addComponent(deliveryPhoneTextField)
+                                    .addComponent(deliveryCityTextField)
+                                    .addComponent(deliveryZipCodeTextField)
+                                    .addComponent(deliveryFirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(billingTitleLabel)
+                            .addComponent(titleLabel))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
+                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage1PanelLayout.createSequentialGroup()
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(paymentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
                                 .addComponent(cardPaymentRadioButton)
                                 .addGap(18, 18, 18)
-                                .addComponent(invoicePaymentRadioButton)))))
-                .addGap(31, 31, 31))
-            .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
-                .addGap(343, 343, 343)
-                .addComponent(titleLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(invoicePaymentRadioButton)))
+                        .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage1PanelLayout.createSequentialGroup()
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(payButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage1PanelLayout.createSequentialGroup()
+                                .addComponent(TotalPriceLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(totalPriceNumberLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage1PanelLayout.createSequentialGroup()
+                        .addComponent(deliveryTimePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))))
         );
         checkOutStage1PanelLayout.setVerticalGroup(
             checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
-                .addComponent(titleLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(totalPriceLabel1)
-                        .addComponent(totalPriceNumberLabel1))
-                    .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(firstNameLabel1)
-                            .addComponent(firstNameTextFieldl1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lastNameLabel1)
-                            .addComponent(lastNameTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(adressLabel1)
-                            .addComponent(adressTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(zipCodeLabel1)
-                            .addComponent(zipCodeTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cityLabel1)
-                            .addComponent(cityTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(phoneLabel1)
-                            .addComponent(phoneTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(emailLabel1)
-                            .addComponent(emailTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(25, 25, 25)
+                .addComponent(billingTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
                         .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cardPaymentRadioButton)
                             .addComponent(invoicePaymentRadioButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(paymentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(stepLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nextButton1)
-                .addGap(20, 20, 20))
-        );
-
-        add(checkOutStage1Panel, "card2");
-
-        titleLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleLabel.setText("Leveransadress");
-
-        firstNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        firstNameLabel.setText("Förnamn");
-
-        firstNameTextFieldl.setText("jTextField1");
-
-        lastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lastNameLabel.setText("Efternamn");
-
-        lastNameTextField.setText("jTextField1");
-
-        adressLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        adressLabel.setText("Adress");
-
-        adressTextField.setText("jTextField1");
-
-        zipCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        zipCodeLabel.setText("Post nummer");
-
-        zipCodeTextField.setText("jTextField1");
-
-        cityLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        cityLabel.setText("Stad");
-
-        cityTextField.setText("jTextField1");
-
-        phoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        phoneLabel.setText("Telefon nummer");
-
-        phoneTextField.setText("jTextField1");
-
-        emailLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        emailLabel.setText("Epost");
-
-        emailTextField.setText("jTextField1");
-
-        totalPriceLabel.setText("Totalt Pris");
-
-        totalPriceNumberLabel.setText("0:-");
-
-        stepLabel.setText("Steg 2 av 3");
-
-        CheckOutStage2RadioButtonGroup.add(sameAdressRadioButton);
-        sameAdressRadioButton.setSelected(true);
-        sameAdressRadioButton.setText("Samma ");
-
-        CheckOutStage2RadioButtonGroup.add(newAdressRadioButton);
-        newAdressRadioButton.setText("Ny adress");
-
-        nextButton.setText("Nästa");
-        nextButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nextButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout checkOutStage2PanelLayout = new javax.swing.GroupLayout(checkOutStage2Panel);
-        checkOutStage2Panel.setLayout(checkOutStage2PanelLayout);
-        checkOutStage2PanelLayout.setHorizontalGroup(
-            checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage2PanelLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(checkOutStage2PanelLayout.createSequentialGroup()
-                        .addComponent(sameAdressRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(newAdressRadioButton))
-                    .addGroup(checkOutStage2PanelLayout.createSequentialGroup()
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(phoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(firstNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lastNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(adressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(zipCodeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(emailTextField)
-                            .addComponent(lastNameTextField)
-                            .addComponent(adressTextField)
-                            .addComponent(phoneTextField)
-                            .addComponent(cityTextField)
-                            .addComponent(zipCodeTextField)
-                            .addComponent(firstNameTextFieldl, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 598, Short.MAX_VALUE)
-                .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage2PanelLayout.createSequentialGroup()
-                        .addComponent(totalPriceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(paymentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(billingFirstNameLabel)
+                            .addComponent(billingFirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totalPriceNumberLabel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(nextButton)
-                        .addComponent(stepLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(31, 31, 31))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage2PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        checkOutStage2PanelLayout.setVerticalGroup(
-            checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(checkOutStage2PanelLayout.createSequentialGroup()
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(checkOutStage2PanelLayout.createSequentialGroup()
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(billingLastNameLabel)
+                            .addComponent(billingLastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(totalPriceLabel)
-                            .addComponent(totalPriceNumberLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(stepLabel)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(billingAdressLabel)
+                            .addComponent(billingAdressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(billingZipCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(billingZipCodeLabel))
+                        .addGap(6, 6, 6)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(billingCityLabel)
+                            .addComponent(billingCityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(billingPhoneLabel)
+                            .addComponent(billingPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nextButton)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage2PanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(billingEmailLabel)
+                            .addComponent(billingEmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
+                        .addComponent(deliveryTimePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TotalPriceLabel)
+                            .addComponent(totalPriceNumberLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(payButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(newAdressRadioButton)
                             .addComponent(sameAdressRadioButton))
                         .addGap(18, 18, 18)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(firstNameLabel)
-                            .addComponent(firstNameTextFieldl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deliveryFirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deliveryFirstNameLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lastNameLabel)
-                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(deliveryLastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deliveryLastNameLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(adressLabel)
-                            .addComponent(adressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deliveryAdressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deliveryAdressLabel))
                         .addGap(6, 6, 6)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(zipCodeLabel)
-                            .addComponent(zipCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deliveryZipCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deliveryZipCodeLabel))
                         .addGap(6, 6, 6)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cityLabel)
-                            .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deliveryCityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deliveryCityLabel))
                         .addGap(6, 6, 6)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(phoneLabel)
-                            .addComponent(phoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deliveryPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deliveryPhoneLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(checkOutStage2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(emailLabel)
-                            .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29))))
+                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deliveryEmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deliveryEmailLabel))))
+                .addGap(38, 38, 38))
         );
 
-        firstNameLabel.getAccessibleContext().setAccessibleDescription("");
-        firstNameTextFieldl.getAccessibleContext().setAccessibleDescription("");
-        lastNameLabel.getAccessibleContext().setAccessibleDescription("");
-        lastNameTextField.getAccessibleContext().setAccessibleDescription("");
-        adressLabel.getAccessibleContext().setAccessibleDescription("");
-        adressTextField.getAccessibleContext().setAccessibleDescription("");
-        zipCodeLabel.getAccessibleContext().setAccessibleDescription("");
-        zipCodeTextField.getAccessibleContext().setAccessibleDescription("");
-        cityLabel.getAccessibleContext().setAccessibleDescription("");
-        cityTextField.getAccessibleContext().setAccessibleDescription("");
-        phoneLabel.getAccessibleContext().setAccessibleDescription("");
-        phoneTextField.getAccessibleContext().setAccessibleDescription("");
-        emailLabel.getAccessibleContext().setAccessibleDescription("");
-        emailTextField.getAccessibleContext().setAccessibleDescription("");
-        totalPriceLabel.getAccessibleContext().setAccessibleDescription("");
-        totalPriceNumberLabel.getAccessibleContext().setAccessibleDescription("");
-        stepLabel.getAccessibleContext().setAccessibleDescription("");
-        sameAdressRadioButton.getAccessibleContext().setAccessibleDescription("");
-        newAdressRadioButton.getAccessibleContext().setAccessibleDescription("");
-
-        add(checkOutStage2Panel, "card2");
-
-        checkOutStage3Panel.setPreferredSize(new java.awt.Dimension(981, 315));
-
-        titleLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        titleLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleLabel2.setText("Leveransdatum");
-
-        totalPriceLabel2.setText("Totalt Pris");
-
-        totalPriceNumberLabel2.setText("0:-");
-
-        stepLabel2.setText("Steg 3 av 3");
-
-        nextButton2.setText("Betala");
-
-        jRadioButton1.setText("Snarast (inom 48h)");
-
-        jRadioButton2.setText("jRadioButton2");
-
-        jRadioButton3.setText("08-11");
-
-        jRadioButton4.setText("11-14");
-
-        jRadioButton5.setText("14-17");
-
-        jRadioButton6.setText("17-21");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel1.setText("Leveransdag");
-
-        jLabel2.setText("Tid på dygnet");
-
-        jLabel3.setText("Morgon");
-
-        jLabel4.setText("Lunch");
-
-        jLabel5.setText("Eftermiddag");
-
-        jLabel7.setText("Kväll");
-
-        javax.swing.GroupLayout checkOutStage3PanelLayout = new javax.swing.GroupLayout(checkOutStage3Panel);
-        checkOutStage3Panel.setLayout(checkOutStage3PanelLayout);
-        checkOutStage3PanelLayout.setHorizontalGroup(
-            checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage3PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(nextButton2)
-                        .addComponent(stepLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(checkOutStage3PanelLayout.createSequentialGroup()
-                        .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jRadioButton6)
-                            .addComponent(totalPriceLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totalPriceNumberLabel2)))
-                .addGap(31, 31, 31))
-            .addGroup(checkOutStage3PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(titleLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage3PanelLayout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
-                    .addGroup(checkOutStage3PanelLayout.createSequentialGroup()
-                        .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(74, 74, 74))
-            .addGroup(checkOutStage3PanelLayout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(checkOutStage3PanelLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(checkOutStage3PanelLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jLabel4))
-                .addGap(14, 14, 14)
-                .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(checkOutStage3PanelLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel7))
-                    .addComponent(jRadioButton5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage3PanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124))
-        );
-        checkOutStage3PanelLayout.setVerticalGroup(
-            checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(checkOutStage3PanelLayout.createSequentialGroup()
-                .addComponent(titleLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(4, 4, 4)
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
-                .addGap(42, 42, 42)
-                .addGroup(checkOutStage3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalPriceLabel2)
-                    .addComponent(totalPriceNumberLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(stepLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nextButton2)
-                .addGap(20, 20, 20))
-        );
-
-        add(checkOutStage3Panel, "card2");
+        add(checkOutStage1Panel, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nextButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButton1ActionPerformed
-        //Switch card to the next one
-        CardLayout cl = (CardLayout)(this.getLayout());
-        cl.next(this);// TODO add your handling code here:
-    }//GEN-LAST:event_nextButton1ActionPerformed
-
-    private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
-        nextButton1ActionPerformed(evt); //Switches card to the next one
-    }//GEN-LAST:event_nextButtonActionPerformed
+    private void payButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payButtonActionPerformed
+        //places an order
+        iMatShared.placeOrder();
+    }//GEN-LAST:event_payButtonActionPerformed
 
     private void cardYearComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardYearComboBoxActionPerformed
         // TODO add your handling code here:
@@ -702,13 +685,105 @@ public class checkOutPanel extends javax.swing.JPanel {
         cl.show(paymentPanel, "invoiceCard");// TODO add your handling code here:
     }//GEN-LAST:event_invoicePaymentRadioButtonActionPerformed
 
+    private void cardNumberTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTextFieldKeyPressed
+        if(cc.getCardNumber() == null){
+            cardNumberTextField.setText("Kortnummer");
+            cardNumberTextField.setForeground(Color.gray);        
+        }
+        else{
+            cardNumberTextField.setText(cc.getCardNumber());
+            cardNumberTextField.setForeground(Color.black);
+            
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_cardNumberTextFieldKeyPressed
+
+    private void cardNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardNumberTextFieldFocusGained
+        if(cc.getCardNumber() == null){
+            cardNumberTextField.setText("Kortnummer");
+            cardNumberTextField.setForeground(Color.gray);        
+        }
+        else{
+            cardNumberTextField.setText(cc.getCardNumber());
+            cardNumberTextField.setForeground(Color.black);
+            
+        }
+    }//GEN-LAST:event_cardNumberTextFieldFocusGained
+
+    private void billingFirstNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingFirstNameTextFieldFocusLost
+        customer.setFirstName(billingFirstNameTextField.getText());        // TODO add your handling code here:
+    }//GEN-LAST:event_billingFirstNameTextFieldFocusLost
+
+    private void billingLastNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingLastNameTextFieldFocusLost
+        customer.setLastName(billingLastNameTextField.getText());        // TODO add your handling code here:
+    }//GEN-LAST:event_billingLastNameTextFieldFocusLost
+
+    private void billingAdressTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingAdressTextFieldFocusLost
+        customer.setAddress(billingAdressTextField.getText());// TODO add your handling code here:
+    }//GEN-LAST:event_billingAdressTextFieldFocusLost
+
+    private void billingZipCodeTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingZipCodeTextFieldFocusLost
+       customer.setPostCode(billingZipCodeTextField.getText()); // TODO add your handling code here:
+    }//GEN-LAST:event_billingZipCodeTextFieldFocusLost
+
+    private void billingCityTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingCityTextFieldFocusLost
+       customer.setPostAddress(billingCityTextField.getText()); // TODO add your handling code here:
+    }//GEN-LAST:event_billingCityTextFieldFocusLost
+
+    private void billingPhoneTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingPhoneTextFieldFocusLost
+       customer.setPhoneNumber(billingPhoneTextField.getText()); // TODO add your handling code here:
+    }//GEN-LAST:event_billingPhoneTextFieldFocusLost
+
+    private void billingEmailTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingEmailTextFieldFocusLost
+        customer.setEmail(billingEmailTextField.getText());// TODO add your handling code here:
+    }//GEN-LAST:event_billingEmailTextFieldFocusLost
+    
+    
+    
+    private void newAdressRadioButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_newAdressRadioButtonItemStateChanged
+         if (evt.getStateChange() == ItemEvent.SELECTED) {
+               deliveryFirstNameTextField.setEditable(true);
+              deliveryLastNameTextField.setEditable(true);
+              deliveryAdressTextField.setEditable(true);
+              deliveryZipCodeTextField.setEditable(true);
+              deliveryCityTextField.setEditable(true);
+              deliveryPhoneTextField.setEditable(true);
+              deliveryEmailTextField.setEditable(true);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_newAdressRadioButtonItemStateChanged
+
+    private void sameAdressRadioButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_sameAdressRadioButtonItemStateChanged
+         if (evt.getStateChange() == ItemEvent.SELECTED) {
+              deliveryFirstNameTextField.setEditable(false);
+              deliveryLastNameTextField.setEditable(false);
+              deliveryAdressTextField.setEditable(false);
+              deliveryZipCodeTextField.setEditable(false);
+              deliveryCityTextField.setEditable(false);
+              deliveryPhoneTextField.setEditable(false);
+              deliveryEmailTextField.setEditable(false);
+        }              // TODO add your handling code here:
+    }//GEN-LAST:event_sameAdressRadioButtonItemStateChanged
+
+    
+    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup CheckOutStage2RadioButtonGroup;
-    private javax.swing.JLabel adressLabel;
-    private javax.swing.JLabel adressLabel1;
-    private javax.swing.JTextField adressTextField;
-    private javax.swing.JTextField adressTextField1;
+    private javax.swing.JLabel TotalPriceLabel;
+    private javax.swing.JLabel billingAdressLabel;
+    private javax.swing.JTextField billingAdressTextField;
+    private javax.swing.JLabel billingCityLabel;
+    private javax.swing.JTextField billingCityTextField;
+    private javax.swing.JLabel billingEmailLabel;
+    private javax.swing.JTextField billingEmailTextField;
+    private javax.swing.JLabel billingFirstNameLabel;
+    private javax.swing.JTextField billingFirstNameTextField;
+    private javax.swing.JLabel billingLastNameLabel;
+    private javax.swing.JTextField billingLastNameTextField;
+    private javax.swing.JLabel billingPhoneLabel;
+    private javax.swing.JTextField billingPhoneTextField;
+    private javax.swing.JLabel billingTitleLabel;
+    private javax.swing.JLabel billingZipCodeLabel;
+    private javax.swing.JTextField billingZipCodeTextField;
     private javax.swing.JLabel cardExpirationLabel;
     private javax.swing.JComboBox cardMonthComboBox;
     private javax.swing.JTextField cardNumberTextField;
@@ -717,25 +792,26 @@ public class checkOutPanel extends javax.swing.JPanel {
     private javax.swing.JTextField cardSecurityCodeTextField;
     private javax.swing.JComboBox cardYearComboBox;
     private javax.swing.JPanel checkOutStage1Panel;
-    private javax.swing.JPanel checkOutStage2Panel;
-    private javax.swing.JPanel checkOutStage3Panel;
-    private javax.swing.JLabel cityLabel;
-    private javax.swing.JLabel cityLabel1;
-    private javax.swing.JTextField cityTextField;
-    private javax.swing.JTextField cityTextField1;
-    private javax.swing.JLabel emailLabel;
-    private javax.swing.JLabel emailLabel1;
-    private javax.swing.JTextField emailTextField;
-    private javax.swing.JTextField emailTextField1;
-    private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JLabel firstNameLabel1;
-    private javax.swing.JTextField firstNameTextFieldl;
-    private javax.swing.JTextField firstNameTextFieldl1;
+    private javax.swing.JLabel deliveryAdressLabel;
+    private javax.swing.ButtonGroup deliveryAdressRadioButtonGroup;
+    private javax.swing.JTextField deliveryAdressTextField;
+    private javax.swing.JLabel deliveryCityLabel;
+    private javax.swing.JTextField deliveryCityTextField;
+    private javax.swing.JLabel deliveryEmailLabel;
+    private javax.swing.JTextField deliveryEmailTextField;
+    private javax.swing.JLabel deliveryFirstNameLabel;
+    private javax.swing.JTextField deliveryFirstNameTextField;
+    private javax.swing.JLabel deliveryLastNameLabel;
+    private javax.swing.JTextField deliveryLastNameTextField;
+    private javax.swing.JLabel deliveryPhoneLabel;
+    private javax.swing.JTextField deliveryPhoneTextField;
+    private javax.swing.JPanel deliveryTimePanel;
+    private javax.swing.JLabel deliveryZipCodeLabel;
+    private javax.swing.JTextField deliveryZipCodeTextField;
     private javax.swing.JPanel invoicePaymentPanel;
     private javax.swing.JRadioButton invoicePaymentRadioButton;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -748,38 +824,14 @@ public class checkOutPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JLabel lastNameLabel;
-    private javax.swing.JLabel lastNameLabel1;
-    private javax.swing.JTextField lastNameTextField;
-    private javax.swing.JTextField lastNameTextField1;
     private javax.swing.JRadioButton newAdressRadioButton;
-    private javax.swing.JButton nextButton;
-    private javax.swing.JButton nextButton1;
-    private javax.swing.JButton nextButton2;
+    private javax.swing.JButton payButton;
     private javax.swing.JPanel paymentPanel;
     private javax.swing.ButtonGroup paymentRadioButtonGroup;
     private javax.swing.JLabel personalNumberLabel;
     private javax.swing.JTextField personalNumberTextField;
-    private javax.swing.JLabel phoneLabel;
-    private javax.swing.JLabel phoneLabel1;
-    private javax.swing.JTextField phoneTextField;
-    private javax.swing.JTextField phoneTextField1;
     private javax.swing.JRadioButton sameAdressRadioButton;
-    private javax.swing.JLabel stepLabel;
-    private javax.swing.JLabel stepLabel1;
-    private javax.swing.JLabel stepLabel2;
     private javax.swing.JLabel titleLabel;
-    private javax.swing.JLabel titleLabel1;
-    private javax.swing.JLabel titleLabel2;
-    private javax.swing.JLabel totalPriceLabel;
-    private javax.swing.JLabel totalPriceLabel1;
-    private javax.swing.JLabel totalPriceLabel2;
-    private javax.swing.JLabel totalPriceNumberLabel;
     private javax.swing.JLabel totalPriceNumberLabel1;
-    private javax.swing.JLabel totalPriceNumberLabel2;
-    private javax.swing.JLabel zipCodeLabel;
-    private javax.swing.JLabel zipCodeLabel1;
-    private javax.swing.JTextField zipCodeTextField;
-    private javax.swing.JTextField zipCodeTextField1;
     // End of variables declaration//GEN-END:variables
 }
