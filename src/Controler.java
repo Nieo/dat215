@@ -15,7 +15,7 @@ import se.chalmers.ait.dat215.project.*;
  *
  * @author Erik
  */
-public class Controler implements ActionListener{
+public class Controler implements ActionListener, ShoppingCartListener{
     MainContainerJFrame mainFrame = new MainContainerJFrame(this);
     IMatDataHandler dh = IMatDataHandler.getInstance();
     ShoppingCart sc = dh.getShoppingCart();
@@ -149,6 +149,11 @@ public class Controler implements ActionListener{
         }
         
        
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent ce) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
