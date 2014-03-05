@@ -1,4 +1,5 @@
 
+import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.util.*;
 import se.chalmers.ait.dat215.project.*;
 
@@ -141,7 +142,7 @@ public class shoppingCartPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clearCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearCartButtonActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_clearCartButtonActionPerformed
 
 
