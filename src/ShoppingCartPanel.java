@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.JPanel;
@@ -40,7 +41,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
             cartHolderPanel.add(new SingleListItem(shoppingItem,true));
         }
         if(listItems.size() < 17){
-            System.err.println("less than 17");
+            System.err.println(listItems.size() + "less than 17");
             for(int i = listItems.size(); i < 17; i++)
                 cartHolderPanel.add(new invisiblePanel());
         }
@@ -54,7 +55,8 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
    private class invisiblePanel extends JPanel{
         public invisiblePanel(){
             setSize(100, 25);
-            setVisible(false);
+            setVisible(true);
+            setBackground(new Color(0xe5,0xf0,0xff));
         }
     }    
     /**
@@ -79,6 +81,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         cartHolderPanel = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(255, 252, 243));
         setMinimumSize(new java.awt.Dimension(200, 630));
         setPreferredSize(new java.awt.Dimension(200, 630));
 
@@ -99,6 +102,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
 
         checkoutCartButton.setText("Till kassa");
 
+        cartHolderPanel.setBackground(new java.awt.Color(229, 240, 255));
         cartHolderPanel.setLayout(new java.awt.GridLayout(0, 1));
         jScrollPane1.setViewportView(cartHolderPanel);
 
@@ -115,15 +119,18 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
                     .addComponent(jSeparator1)
                     .addComponent(jSeparator2)
                     .addComponent(jScrollPane1)
-                    .addComponent(cartNameLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totalSumLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(saveCartButton, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(clearCartButton, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))
+                        .addComponent(clearCartButton, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cartNameLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(totalSumLabel)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

@@ -62,9 +62,10 @@ public class categoryViewPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         categoryNameLabel = new javax.swing.JLabel();
-        separator = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         itemContainerPanel = new javax.swing.JPanel();
+
+        setBackground(new java.awt.Color(255, 252, 243));
 
         categoryNameLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         categoryNameLabel.setText("jLabel1");
@@ -76,12 +77,11 @@ public class categoryViewPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(separator, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(categoryNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 212, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -91,9 +91,7 @@ public class categoryViewPanel extends javax.swing.JPanel {
                 .addComponent(categoryNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137))
+                .addContainerGap(269, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -102,6 +100,5 @@ public class categoryViewPanel extends javax.swing.JPanel {
     private javax.swing.JLabel categoryNameLabel;
     private javax.swing.JPanel itemContainerPanel;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator separator;
     // End of variables declaration//GEN-END:variables
 }

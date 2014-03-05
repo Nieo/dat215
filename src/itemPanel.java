@@ -1,4 +1,4 @@
-import java.awt.Color;
+    import java.awt.Color;
 import java.awt.event.ActionListener;
 import se.chalmers.ait.dat215.project.*;
 
@@ -25,10 +25,10 @@ public class itemPanel extends javax.swing.JPanel {
         
         this.p = p;
         initComponents();
-        if(r)
-            setBackground(new Color(0xff,0xf7,0xd9));
+        if(!r)
+            setBackground(new Color(0xe5,0xf0,0xff));
         else
-            setBackground(new Color(0xff,0xf2,0xc0));
+            setBackground(new Color(0xf4,0xf6,0xff));
         
         iconButton.setIcon(dh.getImageIcon(p, 48, 48));
         iconButton.setBackground(this.getBackground());
