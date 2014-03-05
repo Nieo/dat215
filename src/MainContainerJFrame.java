@@ -83,6 +83,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         sweets = new javax.swing.JButton();
         vegetables = new javax.swing.JButton();
         registerPanel = new javax.swing.JPanel();
+        shoppingCartPanel1 = new shoppingCartPanel();
         mainCenterPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,13 +107,12 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         );
 
         searchPanel.setBackground(new java.awt.Color(238, 2, 2));
-        searchPanel.setPreferredSize(new java.awt.Dimension(140, 40));
 
         javax.swing.GroupLayout searchPanelLayout = new javax.swing.GroupLayout(searchPanel);
         searchPanel.setLayout(searchPanelLayout);
         searchPanelLayout.setHorizontalGroup(
             searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,17 +310,19 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         getContentPane().add(categoryPanel, java.awt.BorderLayout.LINE_START);
 
         registerPanel.setBackground(new java.awt.Color(208, 208, 208));
-        registerPanel.setPreferredSize(new java.awt.Dimension(140, 260));
+        registerPanel.setPreferredSize(new java.awt.Dimension(200, 260));
 
         javax.swing.GroupLayout registerPanelLayout = new javax.swing.GroupLayout(registerPanel);
         registerPanel.setLayout(registerPanelLayout);
         registerPanelLayout.setHorizontalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         registerPanelLayout.setVerticalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 822, Short.MAX_VALUE)
+            .addGroup(registerPanelLayout.createSequentialGroup()
+                .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 192, Short.MAX_VALUE))
         );
 
         getContentPane().add(registerPanel, java.awt.BorderLayout.LINE_END);
@@ -406,6 +408,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel searchPanel;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JPanel settingsPanel;
+    private shoppingCartPanel shoppingCartPanel1;
     private shoppingCartPanel shoppingCartPanel2;
     private javax.swing.JButton sweets;
     private javax.swing.JPanel topPanel;

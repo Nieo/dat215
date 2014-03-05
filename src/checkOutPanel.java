@@ -734,7 +734,7 @@ public class checkOutPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_billingPhoneTextFieldFocusLost
 
     private void billingEmailTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingEmailTextFieldFocusLost
-        customer.setEmail(billingEmailTextField.getText());// TODO add your handling code here:
+        customer.setEmail(billingEmailTextField.getText());
     }//GEN-LAST:event_billingEmailTextFieldFocusLost
     
     
