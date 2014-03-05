@@ -89,7 +89,7 @@ public class itemPanel extends javax.swing.JPanel {
         nameButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         incrementButton.setBackground(new java.awt.Color(255, 255, 255));
-        incrementButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\arrowUp.png")); // NOI18N
+        incrementButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arrowUp.png"))); // NOI18N
         incrementButton.setMaximumSize(new java.awt.Dimension(16, 16));
         incrementButton.setMinimumSize(new java.awt.Dimension(16, 16));
         incrementButton.setPreferredSize(new java.awt.Dimension(16, 16));
@@ -100,7 +100,7 @@ public class itemPanel extends javax.swing.JPanel {
         });
 
         decrementButton.setBackground(new java.awt.Color(255, 255, 255));
-        decrementButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\arrowDown.png")); // NOI18N
+        decrementButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arrowDown.png"))); // NOI18N
         decrementButton.setMaximumSize(new java.awt.Dimension(16, 16));
         decrementButton.setMinimumSize(new java.awt.Dimension(16, 16));
         decrementButton.setPreferredSize(new java.awt.Dimension(16, 16));
@@ -122,7 +122,7 @@ public class itemPanel extends javax.swing.JPanel {
         priceLabel.setText("price");
 
         starButton.setBackground(new java.awt.Color(255, 255, 255));
-        starButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\starEmpty.png")); // NOI18N
+        starButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/starEmpty.png"))); // NOI18N
         starButton.setActionCommand("Star");
         starButton.setBorderPainted(false);
         starButton.addActionListener(new java.awt.event.ActionListener() {
