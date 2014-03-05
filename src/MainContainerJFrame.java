@@ -141,7 +141,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         settingsPanelLayout.setHorizontalGroup(
             settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingsPanelLayout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
@@ -160,7 +160,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             .addGroup(topPanelLayout.createSequentialGroup()
                 .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(settingsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
+                .addComponent(settingsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -304,7 +304,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
                 .addComponent(drinks)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sweets)
-                .addGap(0, 466, Short.MAX_VALUE))
+                .addGap(0, 487, Short.MAX_VALUE))
         );
 
         getContentPane().add(categoryPanel, java.awt.BorderLayout.LINE_START);
@@ -320,7 +320,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         );
         registerPanelLayout.setVerticalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 801, Short.MAX_VALUE)
+            .addGap(0, 822, Short.MAX_VALUE)
         );
 
         getContentPane().add(registerPanel, java.awt.BorderLayout.LINE_END);
