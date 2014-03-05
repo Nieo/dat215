@@ -35,14 +35,14 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     
     public void updateShoppingCartPanel(ShoppingCart cartList){
         cartHolderPanel.removeAll();
-        totalSumLabel.setText(String.valueOf(cartList.getTotal()));
+        totalSumLabel.setText(String.valueOf(Math.round(cartList.getTotal()*100)/100.0));
         List<ShoppingItem> listItems= cartList.getItems();
         for( ShoppingItem shoppingItem: listItems ){
             cartHolderPanel.add(new SingleListItem(shoppingItem,true));
         }
-        if(listItems.size() < 17){
-            System.err.println(listItems.size() + "less than 17");
-            for(int i = listItems.size(); i < 17; i++)
+        if(listItems.size() < 14){
+            System.err.println(listItems.size() + "less than 14");
+            for(int i = listItems.size(); i < 14; i++)
                 cartHolderPanel.add(new invisiblePanel());
         }
         

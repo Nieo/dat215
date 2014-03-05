@@ -29,8 +29,8 @@ public class SingleListItem extends javax.swing.JPanel {
                 
         itemNameLabel.setText(shoppingItem.getProduct().getName());
         System.out.println(String.valueOf(shoppingItem.getProduct().getPrice()));
-        this.jSpinner1.setValue(shoppingItem.getAmount());
-        this.itemPriceLabel.setText(String.valueOf(shoppingItem.getAmount()*shoppingItem.getProduct().getPrice()));
+        amountTextField.setText(String.valueOf(shoppingItem.getAmount()));
+        this.itemPriceLabel.setText(String.valueOf( (Math.round(100*shoppingItem.getAmount()*shoppingItem.getProduct().getPrice()))/100.0 ));
         this.removeItemButton.setVisible(hasRemoveButton);
         removeItemButton.setIcon(new javax.swing.ImageIcon("pictures/redDeleteCross(2).png"));
         
@@ -46,17 +46,92 @@ public class SingleListItem extends javax.swing.JPanel {
     private void initComponents() {
 
         itemNameLabel = new javax.swing.JLabel();
-        removeItemButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jSpinner1 = new javax.swing.JSpinner();
+        incrementButton = new javax.swing.JButton();
+        decrementButton = new javax.swing.JButton();
+        amountTextField = new javax.swing.JTextField();
         itemPriceLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        removeItemButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(229, 240, 255));
         setMaximumSize(null);
-        setPreferredSize(new java.awt.Dimension(220, 25));
+        setPreferredSize(new java.awt.Dimension(220, 32));
 
         itemNameLabel.setText("jLabel1");
+
+        jPanel1.setBackground(new java.awt.Color(229, 240, 255));
+
+        incrementButton.setBackground(new java.awt.Color(255, 255, 255));
+        incrementButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arrowUp.png"))); // NOI18N
+        incrementButton.setMaximumSize(new java.awt.Dimension(16, 16));
+        incrementButton.setMinimumSize(new java.awt.Dimension(16, 16));
+        incrementButton.setPreferredSize(new java.awt.Dimension(16, 16));
+        incrementButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incrementButtonActionPerformed(evt);
+            }
+        });
+
+        decrementButton.setBackground(new java.awt.Color(255, 255, 255));
+        decrementButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arrowDown.png"))); // NOI18N
+        decrementButton.setMaximumSize(new java.awt.Dimension(16, 16));
+        decrementButton.setMinimumSize(new java.awt.Dimension(16, 16));
+        decrementButton.setPreferredSize(new java.awt.Dimension(16, 16));
+        decrementButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decrementButtonActionPerformed(evt);
+            }
+        });
+
+        amountTextField.setText("1");
+        amountTextField.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        amountTextField.setEnabled(false);
+        amountTextField.setPreferredSize(new java.awt.Dimension(24, 20));
+        amountTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amountTextFieldActionPerformed(evt);
+            }
+        });
+
+        itemPriceLabel.setText("100.00");
+
+        jLabel2.setText(":-");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(incrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(decrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(amountTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(itemPriceLabel)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(amountTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(itemPriceLabel)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel2)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(incrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(decrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         removeItemButton.setBorder(null);
         removeItemButton.addActionListener(new java.awt.event.ActionListener() {
@@ -65,59 +140,26 @@ public class SingleListItem extends javax.swing.JPanel {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(229, 240, 255));
-
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(Double.valueOf(1.0d), null, null, Double.valueOf(0.1d)));
-        jSpinner1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jSpinner1.setDoubleBuffered(true);
-        jSpinner1.setEditor(new javax.swing.JSpinner.NumberEditor(jSpinner1, ""));
-        jSpinner1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jSpinner1PropertyChange(evt);
-            }
-        });
-        jSpinner1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jSpinner1KeyPressed(evt);
-            }
-        });
-        jPanel1.add(jSpinner1);
-
-        itemPriceLabel.setText("100.00");
-        jPanel1.add(itemPriceLabel);
-
-        jLabel2.setText(":-");
-        jPanel1.add(jLabel2);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(5, 5, 5)
-                .addComponent(itemNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(itemNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(removeItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(removeItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(itemNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(removeItemButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(removeItemButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jSpinner1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jSpinner1PropertyChange
-
-    }//GEN-LAST:event_jSpinner1PropertyChange
-
-    private void jSpinner1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSpinner1KeyPressed
-        
-    }//GEN-LAST:event_jSpinner1KeyPressed
 
     private void removeItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItemButtonActionPerformed
         sc.removeItem(shoppingItem);
@@ -125,13 +167,45 @@ public class SingleListItem extends javax.swing.JPanel {
                 
     }//GEN-LAST:event_removeItemButtonActionPerformed
 
+    private void amountTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_amountTextFieldActionPerformed
+
+    private void decrementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decrementButtonActionPerformed
+        double i = 1;
+        String s = amountTextField.getText();
+        i  = Double.parseDouble(s);
+        i--;
+        if(i > 0){
+            amountTextField.setText(Double.toString(i));
+            shoppingItem.setAmount(i);
+            sc.fireShoppingCartChanged(shoppingItem, true);
+        }
+    }//GEN-LAST:event_decrementButtonActionPerformed
+
+    private void incrementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incrementButtonActionPerformed
+        double i = 0;
+        String s = amountTextField.getText();
+        System.out.println(s);
+        
+        i = Double.parseDouble(s);
+        
+        i++;
+        System.out.println(""+ i);
+        shoppingItem.setAmount(i);
+        amountTextField.setText(Double.toString(i));
+        sc.fireShoppingCartChanged(shoppingItem, true);
+    }//GEN-LAST:event_incrementButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField amountTextField;
+    private javax.swing.JButton decrementButton;
+    private javax.swing.JButton incrementButton;
     private javax.swing.JLabel itemNameLabel;
     private javax.swing.JLabel itemPriceLabel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JButton removeItemButton;
     // End of variables declaration//GEN-END:variables
 }
