@@ -164,8 +164,8 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPanelLayout.createSequentialGroup()
                 .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+                .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(146, 146, 146))
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,7 +327,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         getContentPane().add(categoryPanel, java.awt.BorderLayout.LINE_START);
 
         registerPanel.setBackground(new java.awt.Color(255, 252, 243));
-        registerPanel.setPreferredSize(new java.awt.Dimension(240, 260));
+        registerPanel.setPreferredSize(new java.awt.Dimension(340, 260));
 
         javax.swing.GroupLayout registerPanelLayout = new javax.swing.GroupLayout(registerPanel);
         registerPanel.setLayout(registerPanelLayout);

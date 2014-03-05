@@ -98,7 +98,7 @@
                                       <Component id="deliveryLastNameLabel" max="32767" attributes="0"/>
                                       <Component id="deliveryAdressLabel" alignment="1" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                                           <Component id="deliveryZipCodeLabel" min="-2" pref="95" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="deliveryCityLabel" max="32767" attributes="0"/>
@@ -126,32 +126,25 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="346" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="payButton" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="TotalPriceLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="totalPriceNumberLabel" min="-2" pref="63" max="-2" attributes="0"/>
-                              </Group>
+                  <EmptySpace pref="347" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="payButton" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="TotalPriceLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="totalPriceNumberLabel" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="deliveryTimePanel" pref="321" max="32767" attributes="0"/>
-                              <Component id="paymentPanel" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="cardPaymentRadioButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="invoicePaymentRadioButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="deliveryTimePanel" pref="321" max="32767" attributes="0"/>
+                          <Component id="paymentPanel" alignment="1" pref="321" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="cardPaymentRadioButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="invoicePaymentRadioButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -213,7 +206,7 @@
                           <Component id="deliveryTimePanel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="TotalPriceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TotalPriceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="totalPriceNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -362,7 +355,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="68" max="32767" attributes="0"/>
+                      <EmptySpace pref="76" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="dayDeliveryComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="monthDeliveryComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -705,6 +698,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="1"/>
             </Property>
+            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="totalPrice() + &quot;:-&quot;" type="code"/>
             </Property>

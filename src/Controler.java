@@ -24,7 +24,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
     checkOutPanel checkoutPanel = new checkOutPanel();
     ShoppingCartPanel shoppingCartPanel = mainFrame.getShoppingCartPanel();
     public Controler(){
-       
+        dh.reset();
         mainFrame.setVisible(true);
         mainFrame.addWindowListener(new WindowAdapter(){
             @Override
