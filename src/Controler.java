@@ -175,6 +175,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
     public void shoppingCartChanged(CartEvent ce) {
         System.out.println("Something happens to the shoppingcart");
         shoppingCartPanel.updateShoppingCartPanel(sc);
+        checkoutPanel.getTotalPriceNumberLabel().setText("" + dh.getShoppingCart().getTotal());
     }
     
 }
