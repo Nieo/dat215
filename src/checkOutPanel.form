@@ -787,11 +787,11 @@
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="cardNumberTextField">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Kortnummer"/>
+                    <Property name="text" type="java.lang.String" value="******KORTNUMMER*****"/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="cardNumberTextFieldFocusGained"/>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cardNumberTextFieldKeyPressed"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="cardNumberTextFieldFocusLost"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="cardMonthComboBox">
@@ -843,8 +843,12 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="cardSecurityCodeTextField">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="S&#xe4;kerhetskod"/>
+                    <Property name="text" type="java.lang.String" value="***CVV****"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="cardSecurityCodeTextFieldFocusGained"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="cardSecurityCodeTextFieldFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="cardExpirationLabel">
                   <Properties>

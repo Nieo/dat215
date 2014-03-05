@@ -348,15 +348,13 @@ public class checkOutPanel extends javax.swing.JPanel {
         cardPaymentPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cardPaymentPanel.setToolTipText("Kort betalning");
 
-        cardNumberTextField.setText("Kortnummer");
+        cardNumberTextField.setText("******KORTNUMMER*****");
         cardNumberTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 cardNumberTextFieldFocusGained(evt);
             }
-        });
-        cardNumberTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                cardNumberTextFieldKeyPressed(evt);
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cardNumberTextFieldFocusLost(evt);
             }
         });
 
@@ -369,7 +367,15 @@ public class checkOutPanel extends javax.swing.JPanel {
             }
         });
 
-        cardSecurityCodeTextField.setText("Säkerhetskod");
+        cardSecurityCodeTextField.setText("***CVV****");
+        cardSecurityCodeTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cardSecurityCodeTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cardSecurityCodeTextFieldFocusLost(evt);
+            }
+        });
 
         cardExpirationLabel.setText("Giltig till");
 
@@ -764,31 +770,19 @@ public class checkOutPanel extends javax.swing.JPanel {
         CardLayout cl = (CardLayout) (paymentPanel.getLayout());
         cl.show(paymentPanel, "invoiceCard");// TODO add your handling code here:
     }//GEN-LAST:event_invoicePaymentRadioButtonActionPerformed
-
-    private void cardNumberTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTextFieldKeyPressed
+    
+    private String getCardNumberText(){
         if(cc.getCardNumber() == null){
-            cardNumberTextField.setText("Kortnummer");
-            cardNumberTextField.setForeground(Color.gray);        
+            
+            cardNumberTextField.setForeground(Color.gray);
+            return "Kortnummer";
         }
         else{
-            cardNumberTextField.setText(cc.getCardNumber());
-            cardNumberTextField.setForeground(Color.black);
             
-        }// TODO add your handling code here:
-    }//GEN-LAST:event_cardNumberTextFieldKeyPressed
-
-    private void cardNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardNumberTextFieldFocusGained
-        if(cc.getCardNumber() == null){
-            cardNumberTextField.setText("Kortnummer");
-            cardNumberTextField.setForeground(Color.gray);        
-        }
-        else{
-            cardNumberTextField.setText(cc.getCardNumber());
             cardNumberTextField.setForeground(Color.black);
-            
+            return cc.getCardNumber();
         }
-    }//GEN-LAST:event_cardNumberTextFieldFocusGained
-
+    }
     private void billingFirstNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingFirstNameTextFieldFocusLost
         customer.setFirstName(billingFirstNameTextField.getText());
         if(sameAdressRadioButton.isSelected()){
@@ -883,6 +877,30 @@ public class checkOutPanel extends javax.swing.JPanel {
             deliveryAdressTextField.setText(billingAdressTextField.getText());
         }// TODO add your handling code here:
     }//GEN-LAST:event_billingAdressTextFieldFocusLost
+
+    private void cardNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardNumberTextFieldFocusGained
+        cardNumberTextField.setText(cc.getCardNumber());
+        cardNumberTextField.setForeground(Color.black);
+        
+    }//GEN-LAST:event_cardNumberTextFieldFocusGained
+
+    private void cardNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardNumberTextFieldFocusLost
+        cc.setCardNumber(cardNumberTextField.getText());
+        cardNumberTextField.setText("******KORTNUMMER*****");// TODO add your handling code here:
+    }//GEN-LAST:event_cardNumberTextFieldFocusLost
+
+    private void cardSecurityCodeTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardSecurityCodeTextFieldFocusGained
+       cardSecurityCodeTextField.setText("" + cc.getVerificationCode());        // TODO add your handling code here:
+    }//GEN-LAST:event_cardSecurityCodeTextFieldFocusGained
+
+    private void cardSecurityCodeTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardSecurityCodeTextFieldFocusLost
+       try{
+           cc.setVerificationCode(Integer.parseInt(cardSecurityCodeTextField.getText()));
+       }catch(IllegalArgumentException e){
+           
+       }
+       cardSecurityCodeTextField.setText("***CVV****");    // TODO add your handling code here:
+    }//GEN-LAST:event_cardSecurityCodeTextFieldFocusLost
 
     public  JLabel getTotalPriceNumberLabel(){
         return totalPriceNumberLabel;
