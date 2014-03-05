@@ -43,6 +43,9 @@ public class categoryViewPanel extends javax.swing.JPanel {
         }
         
     }
+    String getLabel(){
+        return categoryNameLabel.getText();
+    }
     private class invisiblePanel extends JPanel{
         public invisiblePanel(){
             setSize(100, 51);

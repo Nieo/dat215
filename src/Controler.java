@@ -36,7 +36,9 @@ public class Controler implements ActionListener, ShoppingCartListener{
         mainPanel.add(categoryViewPanel,"categoryViewPanel");
         mainPanel.add(checkoutPanel,"checkoutPanel");
         shoppingCartPanel.setActionListener(this);
+        shoppingCartPanel.updateShoppingCartPanel(sc);
         sc.addShoppingCartListener(this);
+        categoryViewPanel.setCategory(dh.favorites(), "Favoriter", this);
        
     }
    
@@ -46,7 +48,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        System.out.println(ae.getActionCommand());
+        System.out.println("getActionCommand" + ae.getActionCommand());
         CardLayout cl = (CardLayout)mainPanel.getLayout();
         List<Product> toDisplay;
         
@@ -73,6 +75,10 @@ public class Controler implements ActionListener, ShoppingCartListener{
             case("Rensa"):
                 System.out.println("kill the shoppingcart. NOW!");
                 sc.clear();
+                break;
+            case("Star"):
+                if(categoryViewPanel.getLabel() == "Favoriter")
+                    categoryViewPanel.setCategory(dh.favorites(), "Favoriter", this);
                 break;
             case("Add to cart"):
                 System.out.println("Add to Cart pressed");

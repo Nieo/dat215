@@ -40,7 +40,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
             cartHolderPanel.add(new SingleListItem(shoppingItem,true));
         }
         if(listItems.size() < 17){
-            System.err.print("less than 17");
+            System.err.println("less than 17");
             for(int i = listItems.size(); i < 17; i++)
                 cartHolderPanel.add(new invisiblePanel());
         }

@@ -37,7 +37,7 @@ public class itemPanel extends javax.swing.JPanel {
         unitLabel.setText(p.getUnitSuffix());
         priceLabel.setText(p.getPrice() + p.getUnit());
         addToCartButton.addActionListener(al);
-        
+        starButton.addActionListener(al);
         if(dh.isFavorite(p))
             starButton.setIcon(new javax.swing.ImageIcon("pictures/starFilled.png"));
         
@@ -86,9 +86,10 @@ public class itemPanel extends javax.swing.JPanel {
 
         nameButton.setText("name");
         nameButton.setBorder(null);
+        nameButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         incrementButton.setBackground(new java.awt.Color(255, 255, 255));
-        incrementButton.setIcon(new javax.swing.ImageIcon("pictures/arrowUp.png")); // NOI18N
+        incrementButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\arrowUp.png")); // NOI18N
         incrementButton.setMaximumSize(new java.awt.Dimension(16, 16));
         incrementButton.setMinimumSize(new java.awt.Dimension(16, 16));
         incrementButton.setPreferredSize(new java.awt.Dimension(16, 16));
@@ -99,7 +100,7 @@ public class itemPanel extends javax.swing.JPanel {
         });
 
         decrementButton.setBackground(new java.awt.Color(255, 255, 255));
-        decrementButton.setIcon(new javax.swing.ImageIcon("pictures/arrowDown.png")); // NOI18N
+        decrementButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\arrowDown.png")); // NOI18N
         decrementButton.setMaximumSize(new java.awt.Dimension(16, 16));
         decrementButton.setMinimumSize(new java.awt.Dimension(16, 16));
         decrementButton.setPreferredSize(new java.awt.Dimension(16, 16));
@@ -121,7 +122,8 @@ public class itemPanel extends javax.swing.JPanel {
         priceLabel.setText("price");
 
         starButton.setBackground(new java.awt.Color(255, 255, 255));
-        starButton.setIcon(new javax.swing.ImageIcon("pictures/starEmpty.png")); // NOI18N
+        starButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Erik\\Documents\\NetBeansProjects\\dat215.2\\pictures\\starEmpty.png")); // NOI18N
+        starButton.setActionCommand("Star");
         starButton.setBorderPainted(false);
         starButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,33 +170,30 @@ public class itemPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(nameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(incrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(decrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(priceLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(unitLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(amountTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(starButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(moreButton)
-                                        .addComponent(addToCartButton)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(iconButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(incrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(decrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(priceLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(unitLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(amountTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(2, 2, 2)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(starButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(moreButton)
+                                            .addComponent(addToCartButton)))))))
+                    .addComponent(iconButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
