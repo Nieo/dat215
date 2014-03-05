@@ -77,8 +77,8 @@ public class Controler implements ActionListener, ShoppingCartListener{
                 sc.clear();
                 break;
             case("Star"):
-                if(categoryViewPanel.getLabel() == "Favoriter")
-                    categoryViewPanel.setCategory(dh.favorites(), "Favoriter", this);
+                //if(categoryViewPanel.getLabel() == "Favoriter")
+                    //categoryViewPanel.setCategory(dh.favorites(), "Favoriter", this);
                 break;
             case("Lägg till"):
                 System.out.println("Add to Cart pressed");
@@ -165,7 +165,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
         if(j.getClass() == ae.getSource().getClass()){
             j = (JTextField)ae.getSource();
             cl.show(mainPanel, "categoryViewPanel");
-            categoryViewPanel.setCategory(dh.findProducts(j.getText()), "Resultat för " + j.getText(), this);
+            categoryViewPanel.setCategory(dh.findProducts(j.getText()), "Sökresultat", this);
         }
         
        

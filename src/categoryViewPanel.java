@@ -15,7 +15,6 @@ import java.util.*;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.*;
 public class categoryViewPanel extends javax.swing.JPanel {
-    
     /**
      * Creates new form categoryViewPanel
      */
@@ -26,6 +25,8 @@ public class categoryViewPanel extends javax.swing.JPanel {
     public void setCategory(List<Product> products, String name, ActionListener al){
         categoryNameLabel.setText(name);
         itemContainerPanel.removeAll();
+        itemContainerPanel.revalidate();
+        itemContainerPanel.repaint();
         itemContainerPanel.setBackground(Color.WHITE);
         if(!products.isEmpty()){
         boolean background = false;
@@ -34,7 +35,7 @@ public class categoryViewPanel extends javax.swing.JPanel {
                 background = !background;
             }
             if(products.size() < 11){
-                
+                System.out.println(products.size()+ "produktssize");
                 for(int i = products.size(); i < 11; i++)
                     itemContainerPanel.add(new invisiblePanel());
             }
