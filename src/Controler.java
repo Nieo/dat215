@@ -23,6 +23,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
     categoryViewPanel categoryViewPanel = new categoryViewPanel();
     checkOutPanel checkoutPanel = new checkOutPanel();
     ShoppingCartPanel shoppingCartPanel = mainFrame.getShoppingCartPanel();
+    HistoryViewPanel historyViewPanel = new HistoryViewPanel(this);
     public Controler(){
         
         mainFrame.setVisible(true);
@@ -35,13 +36,29 @@ public class Controler implements ActionListener, ShoppingCartListener{
         });
         mainPanel.add(categoryViewPanel,"categoryViewPanel");
         mainPanel.add(checkoutPanel,"checkoutPanel");
+        mainPanel.add(historyViewPanel,"historyPanel");
         shoppingCartPanel.setActionListener(this);
         shoppingCartPanel.updateShoppingCartPanel(sc);
         sc.addShoppingCartListener(this);
         categoryViewPanel.setCategory(dh.favorites(), "Favoriter", this);
        
     }
-   
+    private void addToCart(Product product, double amount){
+        int i = 0;
+        boolean found = false;
+        for(ShoppingItem s : sc.getItems()){
+
+            if(s.getProduct().equals(product)){
+                s.setAmount(s.getAmount()+amount);
+                found = true;
+                break;
+            }
+            i++;
+        }
+        if(!found)
+            sc.addProduct(product,amount);
+        
+    }
     
     
     
@@ -53,6 +70,15 @@ public class Controler implements ActionListener, ShoppingCartListener{
         List<Product> toDisplay;
         
         switch(ae.getActionCommand()){
+            case("Lägg till lista i kundvagn"):
+                JButton b =(JButton) ae.getSource();
+                HistoryPanel h = (HistoryPanel) b.getParent();
+                Order o = h.getOrder();
+                for(ShoppingItem s: o.getItems()){
+                    addToCart(s.getProduct(), s.getAmount());
+                }
+                sc.fireShoppingCartChanged(null, true);
+                break;
             case("Favoriter"):
                 System.out.println("I hate this shit");
                 cl.show(mainPanel, "categoryViewPanel");
@@ -62,8 +88,8 @@ public class Controler implements ActionListener, ShoppingCartListener{
                 System.out.println("Not implemented feature button pressed, Kampanj");
                 break;
             case("Mina Listor"):
-                for(ShoppingItem s: sc.getItems())
-                    System.out.println(s.getProduct().toString() + " " + s.getAmount());
+                historyViewPanel = new HistoryViewPanel(this);
+                cl.show(mainPanel, "historyPanel");
                 break;
             case("Till kassa"):
                 System.out.println("CheckoutButton pressed");
@@ -86,20 +112,8 @@ public class Controler implements ActionListener, ShoppingCartListener{
                 itemPanel p = (itemPanel)j.getParent();
                 Product product = p.getProduct();
                 Double amount = p.getAmount();
-                int i = 0;
-                boolean found = false;
-                for(ShoppingItem s : sc.getItems()){
-                    
-                    if(s.getProduct().equals(product)){
-                        s.setAmount(s.getAmount()+amount);
-                        found = true;
-                        break;
-                    }
-                    i++;
-                }
-                if(!found)
-                    sc.addProduct(product,amount);
-                sc.fireShoppingCartChanged(null, found);
+                addToCart(product, amount);
+                sc.fireShoppingCartChanged(null, true);
                 break;
             case("Bröd"):
                 System.out.println("Brödknapp");
