@@ -87,7 +87,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
             case("Kampanj"):
                 System.out.println("Not implemented feature button pressed, Kampanj");
                 break;
-            case("Mina Listor"):
+            case("Orderhistorik"):
                 historyViewPanel = new HistoryViewPanel(this);
                 cl.show(mainPanel, "historyPanel");
                 break;

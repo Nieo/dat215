@@ -215,7 +215,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Mina Listor");
+        jButton1.setText("Orderhistorik");
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(100, 10));
 
