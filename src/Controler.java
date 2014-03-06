@@ -1,6 +1,7 @@
 
 import java.awt.CardLayout;
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.*;
@@ -22,6 +23,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
     JPanel mainPanel = mainFrame.getMainPanel();
     categoryViewPanel categoryViewPanel = new categoryViewPanel();
     checkOutPanel checkoutPanel = new checkOutPanel();
+    CampaignPanel campaignPanel = new CampaignPanel(this);
     ShoppingCartPanel shoppingCartPanel = mainFrame.getShoppingCartPanel();
     public Controler(){
        
@@ -33,6 +35,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
                  e.getWindow().dispose();
             }
         });
+        mainPanel.add(campaignPanel,"campaignPanel");
         mainPanel.add(categoryViewPanel,"categoryViewPanel");
         mainPanel.add(checkoutPanel,"checkoutPanel");
         shoppingCartPanel.setActionListener(this);
@@ -60,6 +63,7 @@ public class Controler implements ActionListener, ShoppingCartListener{
                 break;
             case("Kampanj"):
                 System.out.println("Not implemented feature button pressed, Kampanj");
+                cl.show(mainPanel,"campaignPanel");
                 break;
             case("Mina Listor"):
                 for(ShoppingItem s: sc.getItems())

@@ -215,7 +215,7 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Mina Listor");
+        jButton1.setText("Historik");
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(100, 10));
 
@@ -333,7 +333,9 @@ public class MainContainerJFrame extends javax.swing.JFrame {
         registerPanel.setLayout(registerPanelLayout);
         registerPanelLayout.setHorizontalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         registerPanelLayout.setVerticalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
