@@ -220,7 +220,7 @@ public class checkOutPanel extends javax.swing.JPanel {
         deliveryTimePanelLayout.setVerticalGroup(
             deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deliveryTimePanelLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addContainerGap(76, Short.MAX_VALUE)
                 .addGroup(deliveryTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dayDeliveryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(monthDeliveryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -331,6 +331,7 @@ public class checkOutPanel extends javax.swing.JPanel {
         TotalPriceLabel.setText("Totalt Pris");
 
         totalPriceNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        totalPriceNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         totalPriceNumberLabel.setText(totalPrice() + ":-");
         totalPriceNumberLabel.setToolTipText("");
 
@@ -571,7 +572,7 @@ public class checkOutPanel extends javax.swing.JPanel {
                                     .addComponent(deliveryLastNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(deliveryAdressLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGap(0, 1, Short.MAX_VALUE)
                                         .addComponent(deliveryZipCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(deliveryCityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(deliveryPhoneLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -590,25 +591,21 @@ public class checkOutPanel extends javax.swing.JPanel {
                         .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(billingTitleLabel)
                             .addComponent(titleLabel))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
-                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage1PanelLayout.createSequentialGroup()
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(payButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage1PanelLayout.createSequentialGroup()
-                                .addComponent(TotalPriceLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(totalPriceNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkOutStage1PanelLayout.createSequentialGroup()
-                        .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(deliveryTimePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-                            .addComponent(paymentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, checkOutStage1PanelLayout.createSequentialGroup()
-                                .addComponent(cardPaymentRadioButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(invoicePaymentRadioButton)))
-                        .addGap(62, 62, 62))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
+                .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(payButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(checkOutStage1PanelLayout.createSequentialGroup()
+                            .addComponent(TotalPriceLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(totalPriceNumberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(deliveryTimePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                        .addComponent(paymentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, checkOutStage1PanelLayout.createSequentialGroup()
+                            .addComponent(cardPaymentRadioButton)
+                            .addGap(18, 18, 18)
+                            .addComponent(invoicePaymentRadioButton))))
+                .addGap(62, 62, 62))
         );
         checkOutStage1PanelLayout.setVerticalGroup(
             checkOutStage1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -701,20 +698,150 @@ public class checkOutPanel extends javax.swing.JPanel {
         add(checkOutStage1Panel, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
+    private void sameAdressRadioButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_sameAdressRadioButtonItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            deliveryFirstNameTextField.setEditable(false);
+            deliveryLastNameTextField.setEditable(false);
+            deliveryAdressTextField.setEditable(false);
+            deliveryZipCodeTextField.setEditable(false);
+            deliveryCityTextField.setEditable(false);
+            deliveryPhoneTextField.setEditable(false);
+            deliveryEmailTextField.setEditable(false);
+
+            deliveryFirstNameTextField.setText(billingFirstNameTextField.getText());
+            deliveryLastNameTextField.setText(billingLastNameTextField.getText());
+            deliveryAdressTextField.setText(billingAdressTextField.getText());
+            deliveryZipCodeTextField.setText(billingZipCodeTextField.getText());
+            deliveryCityTextField.setText(billingCityTextField.getText());
+            deliveryPhoneTextField.setText(billingPhoneTextField.getText());
+            deliveryEmailTextField.setText(billingEmailTextField.getText());
+
+        }              // TODO add your handling code here:
+    }//GEN-LAST:event_sameAdressRadioButtonItemStateChanged
+
+    private void newAdressRadioButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_newAdressRadioButtonItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            deliveryFirstNameTextField.setEditable(true);
+            deliveryLastNameTextField.setEditable(true);
+            deliveryAdressTextField.setEditable(true);
+            deliveryZipCodeTextField.setEditable(true);
+            deliveryCityTextField.setEditable(true);
+            deliveryPhoneTextField.setEditable(true);
+            deliveryEmailTextField.setEditable(true);
+
+            deliveryFirstNameTextField.setText("");
+            deliveryLastNameTextField.setText("");
+            deliveryAdressTextField.setText("");
+            deliveryZipCodeTextField.setText("");
+            deliveryCityTextField.setText("");
+            deliveryPhoneTextField.setText("");
+            deliveryEmailTextField.setText("");
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_newAdressRadioButtonItemStateChanged
+
+    private void invoicePaymentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_invoicePaymentRadioButtonActionPerformed
+        CardLayout cl = (CardLayout) (paymentPanel.getLayout());
+        cl.show(paymentPanel, "invoiceCard");// TODO add your handling code here:
+    }//GEN-LAST:event_invoicePaymentRadioButtonActionPerformed
+
+    private void cardPaymentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardPaymentRadioButtonActionPerformed
+        CardLayout cl = (CardLayout) (paymentPanel.getLayout());
+        cl.show(paymentPanel, "cardCard");// TODO add your handling code here:
+    }//GEN-LAST:event_cardPaymentRadioButtonActionPerformed
+
+    private void cardSecurityCodeTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardSecurityCodeTextFieldFocusLost
+        try{
+            cc.setVerificationCode(Integer.parseInt(cardSecurityCodeTextField.getText()));
+        }catch(IllegalArgumentException e){
+
+        }
+        cardSecurityCodeTextField.setText("***CVV****");    // TODO add your handling code here:
+    }//GEN-LAST:event_cardSecurityCodeTextFieldFocusLost
+
+    private void cardSecurityCodeTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardSecurityCodeTextFieldFocusGained
+        cardSecurityCodeTextField.setText("" + cc.getVerificationCode());        // TODO add your handling code here:
+    }//GEN-LAST:event_cardSecurityCodeTextFieldFocusGained
+
+    private void cardYearComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardYearComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cardYearComboBoxActionPerformed
+
+    private void cardNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardNumberTextFieldFocusLost
+        cc.setCardNumber(cardNumberTextField.getText());
+        cardNumberTextField.setText("******KORTNUMMER*****");// TODO add your handling code here:
+    }//GEN-LAST:event_cardNumberTextFieldFocusLost
+
+    private void cardNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardNumberTextFieldFocusGained
+        cardNumberTextField.setText(cc.getCardNumber());
+        cardNumberTextField.setForeground(Color.black);
+
+    }//GEN-LAST:event_cardNumberTextFieldFocusGained
+
     private void payButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payButtonActionPerformed
         //places an order
         if(errorCheck()){
             JOptionPane.showMessageDialog(null, "Var god fyll i alla val.", "Fel i val", JOptionPane.ERROR_MESSAGE);
-        }
-        iMatShared.placeOrder();
-        JOptionPane.showMessageDialog(null, "<html>Din order är bekräftad<br>"
+        }else {
+            iMatShared.placeOrder();
+            JOptionPane.showMessageDialog(null, "<html>Din order är bekräftad<br>"
                 + "<br>"
                 + "Din leverans kommer leveras:   " + (asSoonAsPossibleDeliveryRadioButton.isSelected() ? "Snarast" : dayOfDeliveryToString())
                 +"<br>"
-                + "Tidpunkt: " + timeOfDeliveryToString(), 
+                + "Tidpunkt: " + timeOfDeliveryToString(),
                 "Order bekräftad", JOptionPane.PLAIN_MESSAGE);
-        
+        }
     }//GEN-LAST:event_payButtonActionPerformed
+
+    private void billingEmailTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingEmailTextFieldFocusLost
+        customer.setEmail(billingEmailTextField.getText());
+        if(sameAdressRadioButton.isSelected()){
+            deliveryEmailTextField.setText(billingEmailTextField.getText());
+        }
+    }//GEN-LAST:event_billingEmailTextFieldFocusLost
+
+    private void billingPhoneTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingPhoneTextFieldFocusLost
+        customer.setPhoneNumber(billingPhoneTextField.getText());
+        if(sameAdressRadioButton.isSelected()){
+            deliveryPhoneTextField.setText(billingPhoneTextField.getText());
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_billingPhoneTextFieldFocusLost
+
+    private void billingCityTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingCityTextFieldFocusLost
+        customer.setPostAddress(billingCityTextField.getText());
+        if(sameAdressRadioButton.isSelected()){
+            deliveryCityTextField.setText(billingCityTextField.getText());
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_billingCityTextFieldFocusLost
+
+    private void billingZipCodeTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingZipCodeTextFieldFocusLost
+        customer.setPostCode(billingZipCodeTextField.getText());
+        if(sameAdressRadioButton.isSelected()){
+            deliveryZipCodeTextField.setText(billingZipCodeTextField.getText());
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_billingZipCodeTextFieldFocusLost
+
+    private void billingAdressTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingAdressTextFieldFocusLost
+        customer.setAddress(billingAdressTextField.getText());
+        if(sameAdressRadioButton.isSelected()){
+            deliveryAdressTextField.setText(billingAdressTextField.getText());
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_billingAdressTextFieldFocusLost
+
+    private void billingLastNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingLastNameTextFieldFocusLost
+        customer.setLastName(billingLastNameTextField.getText());
+        if(sameAdressRadioButton.isSelected()){
+            deliveryLastNameTextField.setText(billingLastNameTextField.getText());
+        }
+    }//GEN-LAST:event_billingLastNameTextFieldFocusLost
+
+    private void billingFirstNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingFirstNameTextFieldFocusLost
+        customer.setFirstName(billingFirstNameTextField.getText());
+        if(sameAdressRadioButton.isSelected()){
+            deliveryFirstNameTextField.setText(billingFirstNameTextField.getText());
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_billingFirstNameTextFieldFocusLost
     
     public String dayOfDeliveryToString(){
         return "Den " + dayDeliveryComboBox.getSelectedItem() + "/"+ monthDeliveryComboBox.getSelectedItem();
@@ -756,21 +883,7 @@ public class checkOutPanel extends javax.swing.JPanel {
         }else{
             return "17-21";
         }
-    }
-    private void cardYearComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardYearComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cardYearComboBoxActionPerformed
-
-    private void cardPaymentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardPaymentRadioButtonActionPerformed
-        CardLayout cl = (CardLayout) (paymentPanel.getLayout());
-        cl.show(paymentPanel, "cardCard");// TODO add your handling code here:
-    }//GEN-LAST:event_cardPaymentRadioButtonActionPerformed
-
-    private void invoicePaymentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_invoicePaymentRadioButtonActionPerformed
-        CardLayout cl = (CardLayout) (paymentPanel.getLayout());
-        cl.show(paymentPanel, "invoiceCard");// TODO add your handling code here:
-    }//GEN-LAST:event_invoicePaymentRadioButtonActionPerformed
-    
+    }    
     private String getCardNumberText(){
         if(cc.getCardNumber() == null){
             
@@ -782,126 +895,9 @@ public class checkOutPanel extends javax.swing.JPanel {
             cardNumberTextField.setForeground(Color.black);
             return cc.getCardNumber();
         }
-    }
-    private void billingFirstNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingFirstNameTextFieldFocusLost
-        customer.setFirstName(billingFirstNameTextField.getText());
-        if(sameAdressRadioButton.isSelected()){
-            deliveryFirstNameTextField.setText(billingFirstNameTextField.getText());
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_billingFirstNameTextFieldFocusLost
-
-    private void billingLastNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingLastNameTextFieldFocusLost
-        customer.setLastName(billingLastNameTextField.getText());
-        if(sameAdressRadioButton.isSelected()){
-            deliveryLastNameTextField.setText(billingLastNameTextField.getText());
-        }
-    }//GEN-LAST:event_billingLastNameTextFieldFocusLost
-
-    private void billingZipCodeTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingZipCodeTextFieldFocusLost
-       customer.setPostCode(billingZipCodeTextField.getText());
-        if(sameAdressRadioButton.isSelected()){
-            deliveryZipCodeTextField.setText(billingZipCodeTextField.getText());
-        } // TODO add your handling code here:
-    }//GEN-LAST:event_billingZipCodeTextFieldFocusLost
-
-    private void billingCityTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingCityTextFieldFocusLost
-       customer.setPostAddress(billingCityTextField.getText());
-        if(sameAdressRadioButton.isSelected()){
-            deliveryCityTextField.setText(billingCityTextField.getText());
-        } // TODO add your handling code here:
-    }//GEN-LAST:event_billingCityTextFieldFocusLost
-
-    private void billingPhoneTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingPhoneTextFieldFocusLost
-       customer.setPhoneNumber(billingPhoneTextField.getText());
-        if(sameAdressRadioButton.isSelected()){
-            deliveryPhoneTextField.setText(billingPhoneTextField.getText());
-        } // TODO add your handling code here:
-    }//GEN-LAST:event_billingPhoneTextFieldFocusLost
-
-    private void billingEmailTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingEmailTextFieldFocusLost
-        customer.setEmail(billingEmailTextField.getText());
-        if(sameAdressRadioButton.isSelected()){
-            deliveryEmailTextField.setText(billingEmailTextField.getText());
-        }
-    }//GEN-LAST:event_billingEmailTextFieldFocusLost
+    }    
     
     
-    
-    private void newAdressRadioButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_newAdressRadioButtonItemStateChanged
-         if (evt.getStateChange() == ItemEvent.SELECTED) {
-              deliveryFirstNameTextField.setEditable(true);
-              deliveryLastNameTextField.setEditable(true);
-              deliveryAdressTextField.setEditable(true);
-              deliveryZipCodeTextField.setEditable(true);
-              deliveryCityTextField.setEditable(true);
-              deliveryPhoneTextField.setEditable(true);
-              deliveryEmailTextField.setEditable(true);
-              
-              deliveryFirstNameTextField.setText("");
-              deliveryLastNameTextField.setText("");
-              deliveryAdressTextField.setText("");
-              deliveryZipCodeTextField.setText("");
-              deliveryCityTextField.setText("");
-              deliveryPhoneTextField.setText("");
-              deliveryEmailTextField.setText("");
-              
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_newAdressRadioButtonItemStateChanged
-
-    private void sameAdressRadioButtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_sameAdressRadioButtonItemStateChanged
-         if (evt.getStateChange() == ItemEvent.SELECTED) {
-              deliveryFirstNameTextField.setEditable(false);
-              deliveryLastNameTextField.setEditable(false);
-              deliveryAdressTextField.setEditable(false);
-              deliveryZipCodeTextField.setEditable(false);
-              deliveryCityTextField.setEditable(false);
-              deliveryPhoneTextField.setEditable(false);
-              deliveryEmailTextField.setEditable(false);
-              
-              
-              deliveryFirstNameTextField.setText(billingFirstNameTextField.getText());
-              deliveryLastNameTextField.setText(billingLastNameTextField.getText());
-              deliveryAdressTextField.setText(billingAdressTextField.getText());
-              deliveryZipCodeTextField.setText(billingZipCodeTextField.getText());
-              deliveryCityTextField.setText(billingCityTextField.getText());
-              deliveryPhoneTextField.setText(billingPhoneTextField.getText());
-              deliveryEmailTextField.setText(billingEmailTextField.getText());
-              
-         }              // TODO add your handling code here:
-    }//GEN-LAST:event_sameAdressRadioButtonItemStateChanged
-
-    private void billingAdressTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_billingAdressTextFieldFocusLost
-        customer.setAddress(billingAdressTextField.getText());
-        if(sameAdressRadioButton.isSelected()){
-            deliveryAdressTextField.setText(billingAdressTextField.getText());
-        }// TODO add your handling code here:
-    }//GEN-LAST:event_billingAdressTextFieldFocusLost
-
-    private void cardNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardNumberTextFieldFocusGained
-        cardNumberTextField.setText(cc.getCardNumber());
-        cardNumberTextField.setForeground(Color.black);
-        
-    }//GEN-LAST:event_cardNumberTextFieldFocusGained
-
-    private void cardNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardNumberTextFieldFocusLost
-        cc.setCardNumber(cardNumberTextField.getText());
-        cardNumberTextField.setText("******KORTNUMMER*****");// TODO add your handling code here:
-    }//GEN-LAST:event_cardNumberTextFieldFocusLost
-
-    private void cardSecurityCodeTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardSecurityCodeTextFieldFocusGained
-       cardSecurityCodeTextField.setText("" + cc.getVerificationCode());        // TODO add your handling code here:
-    }//GEN-LAST:event_cardSecurityCodeTextFieldFocusGained
-
-    private void cardSecurityCodeTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardSecurityCodeTextFieldFocusLost
-       try{
-           cc.setVerificationCode(Integer.parseInt(cardSecurityCodeTextField.getText()));
-       }catch(IllegalArgumentException e){
-           
-       }
-       cardSecurityCodeTextField.setText("***CVV****");    // TODO add your handling code here:
-    }//GEN-LAST:event_cardSecurityCodeTextFieldFocusLost
-
     public  JLabel getTotalPriceNumberLabel(){
         return totalPriceNumberLabel;
     }
