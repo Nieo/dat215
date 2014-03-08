@@ -215,11 +215,8 @@ public class MainContainerJFrame extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        jButton1.setText("Historik");
-=======
         jButton1.setText("Orderhistorik");
->>>>>>> 3e09426d730c9b40825dddae65754f61c96fe7f2
+
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(100, 10));
 
